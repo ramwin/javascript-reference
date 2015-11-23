@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style type="text/css">
+            div{
+                margin: 20px;
+            }
+            span{
+                margin: 20px;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <script> list2 = [   ['a','b','c'],
+                            ['d','e','f'],
+                            ['g','h',['we','we','we']],  ]
+                 // 通过迭代生成文件树
+                    function list_to_div(list){ // 把列表变成div
+                        var div_of_directory = document.createElement("div")
+                        for (var x of list) {
+                            if (typeof(x) == 'string') {
+                                    span_of_file = document.createElement("span");
+                                    span_of_file.innerHTML = x;
+                                    div_of_directory.appendChild(span_of_file);
+                                }
+                            else{
+                                    new_div = list_to_div(x);
+                                    div_of_directory.appendChild(new_div);
+                                }
+                            }
+                       return div_of_directory;
+                   }
+        </script>
+        <div id='test'></div>
+        <script>
+                   var test_div = document.getElementById("test");
+                   test_div.innerHTML=list_to_div(list2).innerHTML;
+        </script>
+    </body>
+</html>
