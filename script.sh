@@ -1,4 +1,4 @@
-ls -1 | grep 2015 | while read fn; do
+ls -1 | grep 2016 | while read fn; do
     name=$fn
     left=0
     right=${#name}-5
