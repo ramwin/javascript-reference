@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    </head>
+    <script>
+      function delbrothers(dom) {
+        // 删除一个元素的兄弟元素
+        console.log(a=dom);
+        var pre = dom.previousElementSibling;
+        while (pre) {
+          var tmp = pre.previousElementSibling;
+          pre.remove();
+          pre = tmp;
+        }
+        var nex = dom.nextElementSibling;
+        while (nex) {
+          var tmp = nex.nextElementSibling;
+          nex.remove();
+          nex = tmp;
+        }
+      }
+    </script>
+    <body>
+      <h2>选择兄弟元素并删除</h2>
+      <div>
+        <div>I'm your older older brother</div>
+        <div>I'm your older brother</div>
+        <input type="button" onclick="delbrothers(this)" value="删除兄弟元素">
+        <div>I'm your younger brother</div>
+      </div>
+    </body>
+</html>
