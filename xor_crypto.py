@@ -1,27 +1,30 @@
 # -*- coding: utf-8 -*-
+from django.conf import settings
+import hashlib
 def main(a,b):
     hex_of_a = str_to_hex(a)
-    print("hex_of_a is:{0}".format(hex_of_a))
+    # print("hex_of_a is:{0}".format(hex_of_a))
     hex_of_b = str_to_hex(b)
-    print("hex_of_b is:{0}".format(hex_of_b))
+    # print("hex_of_b is:{0}".format(hex_of_b))
     hex_of_ab = hex_xor(hex_of_a,hex_of_b)
     return hex_of_ab
 def hex_xor(a,b):
+    if len(a)%2 != len(b)%2:
+        print("hahaha")
     print(len(a))
     if (len(a) >= len(b)):
-        print('a长')
+        # print('a长')
         shorter, longer = b,a
     else:
-        print('b长')
+        # print('b长')
         shorter = a
         longer = b
     result = ''
-    print shorter
-    print longer
-    for i in range(len(shorter)/2):
-        print("i= {0}".format(i))
+    # print shorter
+    # print longer
+    for i in range(len(shorter)//2):
         result = result + single_hex_xor(shorter[2*i:2*i+2],longer[2*i:2*i+2])
-    for i in range((len(longer)-len(shorter))/2):
+    for i in range((len(longer)-len(shorter))//2):
         result = result + longer[2*i+len(shorter):2*i+len(shorter)+2]
     return result
 def single_hex_xor(aa,bb):
@@ -51,3 +54,24 @@ def hex_to_chr(aa):
     for i in range(0,len(aa),2):
         result = result + chr( int(aa[i:i+2],16) )
     return result
+def power(y, d, n):
+    if d >= 2:
+        x = power(y, d//2, n)
+        if d % 2:
+            return (x*x*y) % n
+        else:
+            return (x*x) % n
+    return (y**d) % n
+def decrypt(gb,password):
+    # 输入 gb, password 都是前端直接传过来的字符串
+    ramwin1_gb = int(gb)
+    ramwin1_gab = power(ramwin1_gb, settings.RAMWIN1_A, settings.RAMWIN1_P)
+    m1 = hashlib.md5()
+    if __import__('sys').version_info[0] == 3:
+        m1.update(str(ramwin1_gab).encode('utf-8'))
+    else:
+        m1.update(str(ramwin1_gab))
+    gab_md5 = m1.hexdigest()
+    password = hex_xor(gab_md5, password)
+    password = hex_to_chr(password)
+    return password

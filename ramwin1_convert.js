@@ -10,15 +10,12 @@ function str_of_hex_xor(a,b){
     }
     var result = "";
     for(var i=0; i<shorter.length; i=i+2){
-        console.log(i);
         result = result + single_hex_xor(
             shorter.substring(i,i+2), longer.substring(i,i+2));
     }
     for(var j=shorter.length; j<longer.length; j=j+2){
         result = result + longer.substring(j,j+2);
     }
-    console.log("result is:");
-    console.log(result);
     return result
 }
 // 把十六进制表示的字符进行异或运算
@@ -53,4 +50,60 @@ function chr_to_hex(character){
     }
     else { return tmp }
 }
-console.log(str_of_hex_xor('aabbccdd','aabbccdd'))
+// 把字符串变成数字,十六进制表示的字符串
+function ramwin1_to_int(message){
+        var int_of_message = '';
+        for(var i=0;i<message.length;i++){
+            var tmp = message[i].charCodeAt().toString(16);
+            int_of_message = int_of_message+tmp;
+            }
+        return int_of_message;
+    }
+// 求阶乘
+function power(y,d,n){
+    if (d>=2){
+        x = power(y,(d-d%2)/2,n)
+        if (d%2==1){
+            return ( bigint_multiply(bigint_multiply(x,x,n),y,n) )%n
+        }
+        else {
+            return ( bigint_multiply(x,x,n) )%n
+        }
+    }
+    return y%n
+}
+// 两个大数字的乘法
+function bigint_multiply(a,b,p) {
+    if (b>=2) {
+        var x = bigint_multiply(a, (b-b%2)/2, p);
+        if (b%2 ==1){
+            return (x*2 + a)%p;
+        }
+        else {
+            return (x*2)%p;
+        }
+    }
+    else {
+        return a%p;
+    }
+}
+// 密码加密算法
+function ramwin1_crypto(password) {
+    // 输入: password
+    // 输出: password(加密的), gb
+    
+    // 王祥: 把 pw 加密, 得到 pw 和 gb
+	var ramwin1_g = 542432643;
+	var ramwin1_ga = 177885731141;
+	var ramwin1_p = 421542432643;
+	pw = ramwin1_to_int(password);
+	// pw = parseInt(pw,16)
+	ramwin1_b = Math.round(Math.random()*421542432643);
+	gb = power(ramwin1_g,ramwin1_b,ramwin1_p);
+	gab = power(ramwin1_ga,ramwin1_b,ramwin1_p);
+	gab_md5 = hex_md5(gab.toString());
+	gab = 0;
+	// pw = pw^gab;
+	pw = str_of_hex_xor(pw,gab_md5);
+	return [pw,gb]
+}
