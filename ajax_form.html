@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="./source/jquery-3.1.0.js"></script>
+    <script src="./source/jquery.form.js"></script>
+  </head>
+  <body>
+    <h1>使用 ajax 发送form </h1>
+    <script>
+      function beforesubmit(dom) {
+        alert("马上就要提交表单啦，网速准备好了吗");
+        dom.action="http://localhost:8000/api/v1/common/test";
+      }
+    </script>
+    <form is="ajax-form" id="myform"
+      action="http://www.baidu.com/" method="POST"
+      onsubmit="beforesubmit(this)"
+      >
+      <label>Enter your name: <input type="text" name="full_name"></label>
+      <input type="submit">
+    </form>
+    <script>
+      $("#myform").ajaxForm(function(data, status, code) {
+        alert(data);
+        alert(status);
+        alert(code);
+        console.log(c=code);
+      });
+    </script>
+  </body>
+</html>
