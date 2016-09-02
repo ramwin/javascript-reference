@@ -21,6 +21,6 @@
                     },
             success:function(responseTxt){
                 console.log('ok');
-              }
-            });
+            }
+    });
 

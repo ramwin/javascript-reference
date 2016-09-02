@@ -8,6 +8,7 @@
   </head>
   <body>
     <h1>使用 ajax 发送form </h1>
+    <a href='http://201205083157.iteye.com/blog/1543435'>参考</a>
     <script>
       function beforesubmit(dom) {
         alert("马上就要提交表单啦，网速准备好了吗");
@@ -22,12 +23,26 @@
       <input type="submit">
     </form>
     <script>
-      $("#myform").ajaxForm(function(data, status, code) {
+      // 最基础的写法
+      /* $("#myform").ajaxForm(function(data, status, code) {
         alert(data);
         alert(status);
         alert(code);
         console.log(c=code);
-      });
+      }); */
+      var options = {
+        url: 'http://localhost:8000/api/v1/common/test',
+        type: 'post',
+        success: function(data, status, code) {
+          console.log(c=code);
+        },
+        error: function(response){
+          console.log(wx1=data);
+          alert(wx1.responseJSON);
+          return false;
+        },
+      }
+      $('#myform').ajaxForm(options);
     </script>
   </body>
 </html>
