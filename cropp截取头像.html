@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="./cropper.css">
+    <style>
+      img {
+        max-width: 100%;
+      }
+      #img-preview {
+        max-height: 100px;
+        max-width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+   <input type="file" id="inputImage" class="sr-only" onchange="change(this)">
+   <div style="width:100px; height:100px;overflow:hidden" class="img-preview preview-lg" id="img-preview"></div>
+   <img id="image" src="./source/cropper/picture.jpg" style="max-width: 100%"> 
+   <script src="./source/jquery-3.1.0.js"></script>
+   <script src="./source/cropper/cropper.js"></script>
+   <script>
+    $("#image").on({}).cropper({
+      aspectRatio: 1/1,
+      preview: ".img-preview",
+      crop: function(e) {},
+    });
+    function change(dom) {
+      var $inputImage = $('#inputImage');
+      var URL = window.URL || window.wekbitURL;
+      var blobURL;
+      var files = dom.files;
+      var file;
+      if (files && files.length) {
+        file = files[0];
+        blobURL = URL.createObjectURL(file);
+        $("#image").one("built.cropper", function () {
+          URL.revokeObjectURL(blobURL);
+        }).cropper('reset').cropper('replace', blobURL);
+        $("#inputImage").val('');
+      }
+    }
+   </script>
+  </body>
+</html>
