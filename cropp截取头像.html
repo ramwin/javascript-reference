@@ -3,7 +3,7 @@
   <head>
     <title></title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="./cropper.css">
+    <link rel="stylesheet" href="./source/cropper/cropper.css">
     <style>
       img {
         max-width: 100%;
@@ -17,14 +17,18 @@
   <body>
    <input type="file" id="inputImage" class="sr-only" onchange="change(this)">
    <div style="width:100px; height:100px;overflow:hidden" class="img-preview preview-lg" id="img-preview"></div>
-   <img id="image" src="./source/cropper/picture.jpg" style="max-width: 100%"> 
+   <input id="crop_button" type="button" value="截图" onclick="crop_img(this)">
+   <img id="image" src="./source/img/background.jpeg" style="max-width: 100%"> 
    <script src="./source/jquery-3.1.0.js"></script>
    <script src="./source/cropper/cropper.js"></script>
    <script>
     $("#image").on({}).cropper({
       aspectRatio: 1/1,
       preview: ".img-preview",
-      crop: function(e) {},
+      crop: function (e) {
+        var canvas = $("#image").cropper("getCroppedCanvas");
+        console.log(canvas.toDataURL().length);
+      },
     });
     function change(dom) {
       var $inputImage = $('#inputImage');
@@ -34,12 +38,37 @@
       var file;
       if (files && files.length) {
         file = files[0];
-        blobURL = URL.createObjectURL(file);
-        $("#image").one("built.cropper", function () {
-          URL.revokeObjectURL(blobURL);
-        }).cropper('reset').cropper('replace', blobURL);
-        $("#inputImage").val('');
+        var r = new FileReader();
+        r.onloadend = function() {
+          alert('文件读取完毕, 文件大小');
+          alert(r.result.length);
+          var image = document.getElementById('image');
+          image.src = r.result;
+          $("#image").cropper("destroy");
+          $("#image").on({}).cropper({
+            aspectRatio: 1/1,
+            preview: ".img-preview",
+            crop: function (e) {
+            },
+          });
+          $('#inputImage').val('');
+        // $("#image").one("built.cropper", function () {
+        //   URL.revokeObjectURL(blobURL);
+        // }).cropper('reset').cropper('replace', blobURL);
+        // $("#inputImage").val('');
+        }
+        r.readAsDataURL(file);
+        // blobURL = URL.createObjectURL(file);
+        // $("#image").one("built.cropper", function () {
+        //   URL.revokeObjectURL(blobURL);
+        // }).cropper('reset').cropper('replace', blobURL);
+        // $("#inputImage").val('');
       }
+    }
+    function crop_img(dom) {
+      var canvas = $("#image").cropper("getCroppedCanvas");
+      alert('获取了截图的数据');
+      alert(canvas.toDataURL().length);
     }
    </script>
   </body>
