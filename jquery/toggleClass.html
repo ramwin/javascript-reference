@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script src="../source/jquery-3.1.0.js"></script>
+  </head>
+  <body>
+    <input type="button" value="toggleClass('red')" onclick="test(this)">
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+    <script>
+      function test(dom) {
+        console.log('点击按钮');
+        $(".test").toggleClass("red");
+      }
+    </script>
+    <p class="test">点击后更换下面的class</p>
+  </body>
+</html>
