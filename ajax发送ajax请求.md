@@ -21,7 +21,10 @@
                     },
             success:function(responseTxt){
                 console.log('ok');
-            }
+            },
+            error: function(response){
+                console.log("错误")
+            },
     });
 
 
