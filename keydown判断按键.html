@@ -13,7 +13,9 @@
   <body>
     <div id='test'>
       输入文字:
-      <input type="text" id="text">
+      data: 
+      <span v-text="text"></span>
+      <input type="text" id="text" v-on:keydown="monitor_keydown" v-model="text">
       <input id="number" v-model="keyCode"></input>
       <span v-text="keyCode"></span>
       <input type="button" value="点我" v-on:click="show">
@@ -24,7 +26,8 @@
       var vm = new Vue({
         el: "#test",
         data: {
-          "keyCode": 0
+          "keyCode": 0,
+          'text': '',
         },
         methods: {
           show: function() {
@@ -37,6 +40,14 @@
               console.log("安乐")
             } else {
               console.log(event.keyCode);
+            }
+          },
+          monitor_keydown: function() {
+            if (event.ctrlKey  && event.keyCode==89) {
+              var date = new Date();
+              event.target.value = 'ew';
+              // this.text = 'ew';
+            } else {
             }
           }
         }
