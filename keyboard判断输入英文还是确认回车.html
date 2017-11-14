@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="./source/vue-2.1.3.js"></script>
+  </head>
+  <body>
+    <div id="test">
+      <p>
+        要求: 输入的时候不触发
+        输出的时候不触发
+        点击的时候不触发
+        中文输入敲回车的时候不触发
+        英文输入敲回车的时候触发
+      </p>
+      text: {{text}}<br>
+      value: <span id="value"></span><br>
+      dom: <span id="dom"></span><br>
+      <input id="input" v-model="text" v-on:change="change" v-on:keydown="keydown">
+      操作记录:
+      <li v-for="record in records">
+        {{record.text}}
+      </li>
+    </div>
+    <script>
+      var v = new Vue({
+        el: "#test",
+        data: {
+          "text": "",
+          records: [],
+        },
+        computed: {
+          dom: function() {
+            return document.getElementById('input').innerText
+          }
+        },
+        methods: {
+          change: function() {
+            this.records.push({"text":"domchange"})
+            console.log("keycode " + event.keyCode);
+            console.log("change")
+          },
+          keydown: function() {
+            this.records.push({"text":"keydown"+event.keyCode})
+            console.log("keycode " + event.keyCode);
+            console.log("keydown")
+            if (event.keyCode==13){
+              alert(this.text);
+            }
+          },
+        },
+        mounted: function() {
+          console.log("ready");
+          function refresh_v() {
+            document.getElementById("value").innerText = document.getElementById("input").value;
+            document.getElementById("dom").innerText = document.getElementById("input").value;
+          }
+          setInterval(refresh_v, 100);
+        }
+      });
+    </script>
+  </body>
+</html>

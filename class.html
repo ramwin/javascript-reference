@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <h1 id="h1">标题</h1>
+    <script>
+      ClassTest = function classtest() {
+        var var_variable = "var_variable" + Math.random().toString();  // 外部无法获取
+        this.this_variable = 'this_variable' + Math.random().toString();  // 外部可以获取
+        variable = 'variable' + Math.random().toString();  // 全局
+        // debugger;
+        this.thisfunction = function() {
+          alert("调用thisfunction");
+          alert(var_variable);  // 内部变量直接调用
+          alert(this.var_variable);  // 未定义
+          // alert(this_variable);  // 不可用
+          alert(this.this_variable); 
+
+          alert(variable);  // 全局变量当然可用
+          alert(this.variable);  // 未定义
+        }
+        this.get_var = function (){
+          console.log(var_variable);
+        }
+      }
+      a = new ClassTest();
+      alert(a.var_variable);  // undefined
+      alert(a.this_variable);  // 可用
+      alert(a.variable);  // 不存在
+      alert(variable);  // 全局可用
+      a.get_var();
+      // a.thisfunction();
+      b = new ClassTest();
+      alert(a.var_variable);  // undefined
+      alert(a.this_variable);  // 可用
+      alert(a.variable);  // 不存在
+      alert(variable);  // 全部变量随时变更
+      a.get_var();
+    </script>
+  </body>
+</html>

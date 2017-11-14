@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <script>
+      "use strict";
+      y = 1;
+      var out = "我是全局"
+      function test() {
+        var out = "我是局部";
+        alert(out)
+        alert(window.out);
+      }
+      function test1() {
+        alert(out)
+      }
+    </script>
+    <input type="button" value="查看全局变量" onclick="test1()">
+    <input type="button" value="查看局部变量" onclick="test()">
+  </body>
+</html>
