@@ -15,3 +15,6 @@
         encodeURIComponent('http://www.ramwin.com/?text=文字')
         >>> "https%3A%2F%2Fwww.ramwin.com%2F%3Ftext%3D%E6%96%87%E5%AD%97"
         ```
+
+* 第三方插件
+    [cropp截取头像](cropp截取头像.html)
