@@ -5,21 +5,33 @@
 * [mozilla官方参考](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 # 内置对象或者函数
-* [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-    * 示例代码
+## [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+* 示例代码
     ```
-        new Date();  // 获取当前时间
-        var time2 = new Date(3000);  // 从标准时间到现在的时间, 但是这个是localhost的
-        console.log(time2);
-        var time3 = new Date('2016-09-13T07:55:16.742Z');
-        console.log(time3);
-        console.log(time3.toISOString()) "%y-%m-%dT%H:%M:%S.000Z"这种格式
+    var fruits = ['Apple', 'Banana'];  // ['Apple', "Banana']
+    fruits.indexOf('Apple');  // 0
+    fruits.indexOf('Pear');  // -1
+    fruits.splice(0, 1); // delete one item from index 0, ['Banana']
+    fruits.forEach(function(item, index, array) {
+        console.log(item, index);
+    });
     ```
-    * 注意事项
-        * 月份是从0开始计算的，但是日期是从1开始计算的
-        * Date(2013, 13, 1) 和 Date(2014, 1, 1) 等价。类似的如果秒也是这样，那也等价
-    * Methods
-        * Date.now()  // 1520395758500
+
+## [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+* 示例代码
+    ```
+    new Date();  // 获取当前时间
+    var time2 = new Date(3000);  // 从标准时间到现在的时间, 但是这个是localhost的
+    console.log(time2);
+    var time3 = new Date('2016-09-13T07:55:16.742Z');
+    console.log(time3);
+    console.log(time3.toISOString()) "%y-%m-%dT%H:%M:%S.000Z"这种格式
+    ```
+* 注意事项
+    * 月份是从0开始计算的，但是日期是从1开始计算的
+    * Date(2013, 13, 1) 和 Date(2014, 1, 1) 等价。类似的如果秒也是这样，那也等价
+* Methods
+    * Date.now()  // 1520395758500
 
 # 操作符号，表达式  
 * 字符串格式化
