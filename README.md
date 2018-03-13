@@ -16,7 +16,6 @@
         console.log(item, index);
     });
     ```
-
 ## [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * 示例代码
     ```
@@ -32,6 +31,9 @@
     * Date(2013, 13, 1) 和 Date(2014, 1, 1) 等价。类似的如果秒也是这样，那也等价
 * Methods
     * Date.now()  // 1520395758500
+
+## [RegExp正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+* 示例代码: `'123fea'.replace(/\d+/, 'd')`
 
 # 操作符号，表达式  
 * 字符串格式化
