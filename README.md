@@ -1,21 +1,50 @@
-#### 学习javascript有关的知识
+**Xiang Wang @ 2015-11-23 18:56:23**
 
 
-# 基础
-* [mozilla官方参考](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+# Menu
+* [mozilla official reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Object basic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
 
-# 内置对象或者函数
+# [Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction)
+* [ ] Introduction
+* ## [Working with objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
+    * `object[obj] = value`: the inner obj can be anything, but since the object only accept string as a key, it will call obj.toString() as the key
+    * [Enumerate_the_properties_of_an_object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#Enumerate_the_properties_of_an_object)
+    ```
+    for (var i in object) {console.log(object[i])}
+    ```
+* [ ] Meta programming
+
+# [Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
 ## [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-* 示例代码
-    ```
-    var fruits = ['Apple', 'Banana'];  // ['Apple', "Banana']
-    fruits.indexOf('Apple');  // 0
-    fruits.indexOf('Pear');  // -1
-    fruits.splice(0, 1); // delete one item from index 0, ['Banana']
-    fruits.forEach(function(item, index, array) {
-        console.log(item, index);
-    });
-    ```
+* Basic Example
+
+```javascript
+var fruits = ['Apple', 'Banana'];  // ['Apple', "Banana'] create an array
+fruits.length;
+var first = fruits[0];  // Access (index into) an Array item
+var last = fruits[fruits.length - 1];
+fruits.indexOf('Apple');  // 0
+fruits.indexOf('Pear');  // -1
+
+fruits.forEach(function(item, index, array) {  // loop and array
+  console.log(item, index);
+});
+// Apple 0
+// Banana 1
+
+var newLength = fruits.push('Orange'); // Add to the end of an Array
+var last = fruits.pop()  // Remove from the end of an Array
+var first = fruits.shift(); // Remove from the front of an Array
+var newLength = fruits.unshift('Strawberry') // add to the front
+
+
+fruits.splice(0, 1); // delete one item from index 0, ['Banana']
+fruits.forEach(function(item, index, array) {
+    console.log(item, index);
+});
+```
+
 ## [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * 示例代码
     ```
@@ -31,6 +60,15 @@
     * Date(2013, 13, 1) 和 Date(2014, 1, 1) 等价。类似的如果秒也是这样，那也等价
 * Methods
     * Date.now()  // 1520395758500
+
+## [Object API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+* 删除一个key
+    ```
+    var myobj = new Object;
+    myobj.a = 5;
+    myobj.b = 12;
+    delete myobj.a;
+    ```
 
 ## [RegExp正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 * 示例代码: `'123fea'.replace(/\d+/, 'd')`
@@ -93,3 +131,12 @@
             console.log("");
         }
         ```
+* scroll滚动
+    * 滚动到页面底部后更新
+    ```
+    $(window).scroll(function() {
+     if($(window).scrollTop() + $(window).height() +1 >= $(document).height()) {
+       user_list_vm.show_more();
+     }
+    });
+    ```
