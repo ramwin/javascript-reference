@@ -8,7 +8,8 @@
 # [Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction)
 * [ ] Introduction
 * ## [Working with objects 使用对象](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
-    * `object[obj] = value`: the inner obj can be anything, but since the object only accept string as a key, it will call obj.toString() as the key
+    * `object[obj] = value`: 
+    > the inner obj can be anything, but since the object only accept string as a key, it will call obj.toString() as the key
     * [Enumerate_the_properties_of_an_object 枚举一个对象的所有属性](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#Enumerate_the_properties_of_an_object)
     ```
     for (var i in object) {console.log(object[i])}
@@ -28,6 +29,7 @@
     ```
     * [ ] use Object.create()
     * [ ] Inheritance 继承
+    * use jquery to extend a dict `$.extend(obj1, obj2, ...)`
 
 * [ ] Meta programming
 
@@ -61,6 +63,13 @@ fruits.forEach(function(item, index, array) {
 });
 ```
 
+* map
+```
+var a = [1, 2, 3];
+const b = a.map(x => x*x);
+console.log(b) [1, 4, 9]
+```
+
 ## [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * 示例代码
     ```
@@ -87,9 +96,40 @@ fruits.forEach(function(item, index, array) {
     ```
 
 ## [RegExp正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-* 示例代码: `'123fea'.replace(/\d+/, 'd')`
+* Syntax 语法:
+    ```
+    /pattern/flags
+    new RegExp(pattern[, flags])
+    RegExp(pattern[, flags])
 
-# 操作符号，表达式  
+    /ab+c/i;
+    new RegExp('ab+c', 'i');
+    new RegExp(/ab+c/, 'i');
+    ```
+
+* Examples 示例
+    ```
+    '123fea'.replace(/\d+/, 'd')
+
+    # change data format
+    var re = /(\w+)\s(\w+)/;
+    var str = 'John Smith';
+    var newstr = str.replace(re, '$2, $1');
+    console.log(newstr);
+
+    # use regular expression to split lines
+    var text = 'Some text\nAnd some more\r\nAnd yet\rThis is the end';
+    var lines = text.split(/\r\n|\r|\n/);
+    console.log(lines); // logs [ 'Some text', 'And some more', 'And yet', 'This is the end' ]
+    ```
+
+
+# [Expressions and operators 操作符号，表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
+* [Logical Operators 逻辑操作](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+    * `&&` and
+    * `||` or
+    * `!` not
+
 * 字符串格式化
     ```
     i = 2
@@ -97,18 +137,26 @@ fruits.forEach(function(item, index, array) {
     // "123"
     ```
 
-# 语法
-* for:
+# [Statements & declarations 语法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/Legacy_generator_function)
+## [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+it cannot change through re-assignment, and it can't be redeclared. It does not mean the value it holds is immutable. User `Object.freeze()` to set the variable immutable.
+```
+const name1=value1 [, name2=value2]
+const O = new Object()  // usually we will use all-uppercase letters
+O.b = 2
+```
+
+## for:
     ```
     for (var i=1; i<10; i++){
         console.log(i)
     }
     ```
-* for of:
+## for of:
     ```
     for ( let i of [4, 3, 2]) { console.log(i)}
     ```
-* [for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in):  
+## [for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in):  
     `for in`的顺序是不一定的，不能依赖他的顺序，也不能用于`Array`
     ```
     var string1 = "";
@@ -118,12 +166,6 @@ fruits.forEach(function(item, index, array) {
     }
     console.log(string1);  // "123"
     ```
-
-# 基础
-* 操作符号
-    * `&&` and
-    * `||` or
-    * `!` not
 
 # [训练学习](https://gomakethings.com/guides/)
 # [拖拽文档](./drag.md) [示例](./drag.html)
