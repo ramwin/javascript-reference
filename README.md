@@ -35,7 +35,7 @@
 
 # [Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
 ## [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-* Basic Example
+### Basic Example
 
 ```javascript
 var fruits = ['Apple', 'Banana'];  // ['Apple', "Banana'] create an array
@@ -56,14 +56,31 @@ var last = fruits.pop()  // Remove from the end of an Array
 var first = fruits.shift(); // Remove from the front of an Array
 var newLength = fruits.unshift('Strawberry') // add to the front
 
-
 fruits.splice(0, 1); // delete one item from index 0, ['Banana']
 fruits.forEach(function(item, index, array) {
     console.log(item, index);
 });
 ```
 
-* map
+### [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+```
+var array1 = [5, 12, 8, 130, 44];
+
+var found = array1.find(function(element) {
+  return element > 10;
+});
+
+console.log(found);
+// 12
+
+to be continued...
+```
+
+### [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+like find, but return the index of an array  
+to be continued...
+
+### map
 ```
 var a = [1, 2, 3];
 const b = a.map(x => x*x);
