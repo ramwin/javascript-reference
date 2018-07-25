@@ -1,6 +1,5 @@
 **Xiang Wang @ 2015-11-23 18:56:23**
 
-
 # Menu
 * [mozilla official reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [Object basic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
@@ -30,63 +29,10 @@
     * [ ] use Object.create()
     * [ ] Inheritance 继承
     * use jquery to extend a dict `$.extend(obj1, obj2, ...)`
-
 * [ ] Meta programming
 
-# [Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
-## [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-### Basic Example
-
-```javascript
-var fruits = ['Apple', 'Banana'];  // ['Apple', "Banana'] create an array
-fruits.length;
-var first = fruits[0];  // Access (index into) an Array item
-var last = fruits[fruits.length - 1];
-fruits.indexOf('Apple');  // 0
-fruits.indexOf('Pear');  // -1
-
-fruits.forEach(function(item, index, array) {  // loop and array
-  console.log(item, index);
-});
-// Apple 0
-// Banana 1
-
-var newLength = fruits.push('Orange'); // Add to the end of an Array
-var last = fruits.pop()  // Remove from the end of an Array
-var first = fruits.shift(); // Remove from the front of an Array
-var newLength = fruits.unshift('Strawberry') // add to the front
-
-fruits.splice(0, 1); // delete one item from index 0, ['Banana']
-fruits.forEach(function(item, index, array) {
-    console.log(item, index);
-});
-```
-
-### [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
-```
-var array1 = [5, 12, 8, 130, 44];
-
-var found = array1.find(function(element) {
-  return element > 10;
-});
-
-console.log(found);
-// 12
-
-to be continued...
-```
-
-### [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
-like find, but return the index of an array  
-to be continued...
-
-### map
-```
-var a = [1, 2, 3];
-const b = a.map(x => x*x);
-console.log(b) [1, 4, 9]
-```
-
+# [Standard built-in objects 内置对象](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+## [Array 数组](array.md), [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 ## [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * 示例代码
     ```
@@ -110,8 +56,7 @@ console.log(b) [1, 4, 9]
     myobj.a = 5;
     myobj.b = 12;
     delete myobj.a;
-    ```
-
+    ```  
 ## [RegExp正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 * Syntax 语法:
     ```
@@ -123,7 +68,6 @@ console.log(b) [1, 4, 9]
     new RegExp('ab+c', 'i');
     new RegExp(/ab+c/, 'i');
     ```
-
 * Examples 示例
     ```
     '123fea'.replace(/\d+/, 'd')
@@ -139,6 +83,12 @@ console.log(b) [1, 4, 9]
     var lines = text.split(/\r\n|\r|\n/);
     console.log(lines); // logs [ 'Some text', 'And some more', 'And yet', 'This is the end' ]
     ```
+## [String 字符串](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+* Template literals 模板
+```
+`hello ${who}`
+escape `<a>${who}</a>`
+```
 
 
 # [Expressions and operators 操作符号，表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
@@ -155,25 +105,24 @@ console.log(b) [1, 4, 9]
     ```
 
 # [Statements & declarations 语法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/Legacy_generator_function)
-## [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+* ## [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 it cannot change through re-assignment, and it can't be redeclared. It does not mean the value it holds is immutable. User `Object.freeze()` to set the variable immutable.
 ```
 const name1=value1 [, name2=value2]
 const O = new Object()  // usually we will use all-uppercase letters
 O.b = 2
 ```
-
-## for:
+* ## for:
     ```
     for (var i=1; i<10; i++){
         console.log(i)
     }
     ```
-## for of:
+* ## for of:
     ```
     for ( let i of [4, 3, 2]) { console.log(i)}
     ```
-## [for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in):  
+* ## [for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in):  
     `for in`的顺序是不一定的，不能依赖他的顺序，也不能用于`Array`
     ```
     var string1 = "";
@@ -195,6 +144,31 @@ O.b = 2
 
 # 第三方插件
     [cropp截取头像](cropp截取头像.html)
+* ## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+```
+switch (expression) {
+    case value1:
+        // statements
+        break  // break is necessary, otherwise the statements will continue execute
+    case value2:
+        // statements
+        break
+    case 3:  // multi case judgement
+    case 4:
+    case 5:
+        // expression in [3,4,5]
+        break
+    case valueN:
+        // statements
+        break
+    default:
+        // statements  if none of the values match the expression
+        break  // if you forget the break, the case value5 will still be executed
+    case value5:
+        // statements
+        break
+}
+```
 
 
 # [webapi](https://developer.mozilla.org/en-US/docs/Web/API)
