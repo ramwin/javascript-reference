@@ -132,6 +132,13 @@ O.b = 2
     }
     console.log(string1);  // "123"
     ```
+* ## [function 函数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
+```
+function myfunction() {
+  console.log(arguments)  // show the arguments
+}
+```
+
 * ## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
 ```
 switch (expression) {
