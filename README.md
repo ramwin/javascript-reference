@@ -92,12 +92,21 @@ escape `<a>${who}</a>`
 
 
 # [Expressions and operators 操作符号，表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
-* [Logical Operators 逻辑操作](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+* ## [in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in)
+> you must use index instead of value for a list, so the `in` operator means has property or not, it doesn't means the object contains the item
+    ```
+    obj = {'key': 'value'}
+    'key' in obj  // true
+    list = ['a', 'b', 'c']
+    1 in list  // true
+    3 in list  // false
+    'a' in list  // false
+    ```
+* ## [Logical Operators 逻辑操作](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
     * `&&` and
     * `||` or
     * `!` not
-
-* 字符串格式化
+* ## 字符串格式化
     ```
     i = 2
     console.log(`1${i}3`)
