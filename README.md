@@ -29,6 +29,7 @@ you must use index instead of value for a list, so the `in` operator means has p
     * `||` or
     * `!` not
 
+# [Statements & declarations 语法](statements_and_declarations语法.md)
 # [webapi](https://developer.mozilla.org/en-US/docs/Web/API)
 * WindowOrWorkerGlobalScope
     * [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)

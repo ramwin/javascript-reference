@@ -2,24 +2,52 @@
 
 
 # [Statements & declarations 语法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/Legacy_generator_function)
-* ## [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+## [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 it cannot change through re-assignment, and it can't be redeclared. It does not mean the value it holds is immutable. User `Object.freeze()` to set the variable immutable.
 ```
 const name1=value1 [, name2=value2]
 const O = new Object()  // usually we will use all-uppercase letters
 O.b = 2
 ```
-* ## for:
+
+## [continue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue)
+* 和while一起用
+```
+var i = 0
+while (i < 5) {
+    i++
+    if (i === 3) {
+        continue
+    }
+    console.log(i)
+}
+```
+* 和 label 一起用
+```
+var i = 0;
+var j = 9;
+checkiandj: while(i < 4) {
+    checkj: while(j > 4) {
+        j-=1
+        if ((j%2) == 0)
+            continue checkj  // 默认是最近的循环, 所以默认就是checkj
+    }
+}
+```
+
+
+## for:
     ```
     for (var i=1; i<10; i++){
         console.log(i)
     }
     ```
-* ## for of:
+
+## for of:
     ```
     for ( let i of [4, 3, 2]) { console.log(i)}
     ```
-* ## [for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in):  
+## [for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in):  
     `for in`的顺序是不一定的，不能依赖他的顺序，也不能用于`Array`
     ```
     var string1 = "";
@@ -29,14 +57,14 @@ O.b = 2
     }
     console.log(string1);  // "123"
     ```
-* ## [function 函数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
+## [function 函数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
 ```
 function myfunction() {
   console.log(arguments)  // show the arguments
 }
 ```
 
-* ## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
 ```
 switch (expression) {
     case value1:
