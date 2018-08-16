@@ -30,6 +30,15 @@ you must use index instead of value for a list, so the `in` operator means has p
     * `!` not
 
 # [Statements & declarations 语法](statements_and_declarations语法.md)
+* ## const
+* ## continue
+* ## for
+* ## for of
+* ## for in
+* ## function
+* ## switch
+* ## try...catch
+
 # [webapi](https://developer.mozilla.org/en-US/docs/Web/API)
 * WindowOrWorkerGlobalScope
     * [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
