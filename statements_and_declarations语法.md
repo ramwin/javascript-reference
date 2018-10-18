@@ -64,7 +64,8 @@ function myfunction() {
 }
 ```
 
-## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+## switch [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+* example
 ```
 switch (expression) {
     case value1:
@@ -89,3 +90,5 @@ switch (expression) {
         break
 }
 ```
+
+* 如何处理多种case [stackoverflow](https://stackoverflow.com/questions/13207927/switch-statement-multiple-cases-in-javascript)

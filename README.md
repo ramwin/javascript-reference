@@ -30,14 +30,30 @@ you must use index instead of value for a list, so the `in` operator means has p
     * `!` not
 
 # [Statements & declarations 语法](statements_and_declarations语法.md)
+* ## switch
+
 # [webapi](https://developer.mozilla.org/en-US/docs/Web/API)
-* WindowOrWorkerGlobalScope
+* [WindowOrWorkerGlobalScope](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope)
+    * [ ] caches
+    * [ ] indexedDB
+    * [ ] isSecureContext
+    * [ ] origin
+    * [ ] atob
+    * [ ] btoa
+    * [ ] clearInterval
+    * [ ] clearTimeout
+    * [ ] createImageBitmap()
+    * [ ] fetch()
     * [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
         ```javascript
         function happy() {
             console.log("");
         }
         ```
+    * [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)  
+        setTimeout return an timeoutId(integer), it share the same id with setInterval. The clearTimeout() and clearInterval() can technicaly be used interchangebaly.
+        * Syntax: `var timeoutId = scope.setTimeout(function, delay, param1, param2, ...)`
+        * Example: `timeoutId = window.setTimeout(window.alert, 2000, 'That was relly slow!');`
 * scroll滚动
     * 滚动到页面底部后更新
     ```
