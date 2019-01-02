@@ -8,6 +8,10 @@
 # [Standard built-in objects 内置对象](./build_in_objects内置对象.md)
 * ## Array数组
 * ## Date
+* ## Math [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+    * Math.floor [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
+    返回一个数字的整数部分，如果是null的话，会返回0, 如果是 -5.05 会返回-6，所以返回的是小于等于这个数字的最大整数
+    返回一个数字的divmod, [答案](https://stackoverflow.com/questions/4228356/integer-division-with-remainder-in-javascript), 不支持负数
 * ## Object
 * ## RegExp
 * ## [String](./build_in_objects内置对象.md#String)
