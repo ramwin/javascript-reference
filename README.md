@@ -29,6 +29,9 @@ you must use index instead of value for a list, so the `in` operator means has p
     * `||` or
     * `!` not
 
+* ## Operator precedence 执行顺序 [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+
+
 # [Statements & declarations 语法](statements_and_declarations语法.md)
 * ## switch
 
