@@ -6,7 +6,7 @@
 
 # [Guide](guide导览.md)
 # [Standard built-in objects 内置对象](./build_in_objects内置对象.md)
-* ## Array数组
+* ## [Array数组](./array.md)
 * ## Date
 * ## Math [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
     * Math.floor [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)

@@ -1,7 +1,8 @@
 **Xiang Wang @ 2018-07-24 15:36:15**
 
 
-## [Array 数组](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+Array 数组 [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
 ### Basic Example
 
 ```javascript
@@ -29,6 +30,16 @@ fruits.forEach(function(item, index, array) {
 });
 ```
 
+### concat [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+把多个array或者item合并，生成一个新的array。是一个shadowcopy。
+如果输入的参数是array，就把这个array复制添加到this的后面，如果不是array，就会直接把这个item push到后面. 但是这个不会迭代，只会判断一层
+```
+var array1 = ['a', 'b', 'c']
+var array2 = ['d', 'e', 'f']
+var array3 = array1.concat(array2)
+var array4 = array1.concat(array2, array3)  可以一次性concat几个array
+```
+
 ### [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 ```
 var array1 = [5, 12, 8, 130, 44];
@@ -52,4 +63,15 @@ to be continued...
 var a = [1, 2, 3];
 const b = a.map(x => x*x);
 console.log(b) [1, 4, 9]
+```
+
+### unshift [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+把一个或者多个元素添加到数组头部，然后返回数据长度
+```
+>>> var array1 = [1, 2, 3]
+>>> array1.unshift(4, 5)
+4
+>>> array1
+[4, 5, 1, 2, 34]
+
 ```
