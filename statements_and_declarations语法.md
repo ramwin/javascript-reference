@@ -57,7 +57,8 @@ checkiandj: while(i < 4) {
     }
     console.log(string1);  // "123"
     ```
-## [function 函数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
+
+## [function 函数](./functions函数.md)
 ```
 function myfunction() {
   console.log(arguments)  // show the arguments

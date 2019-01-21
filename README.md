@@ -39,6 +39,8 @@ you must use index instead of value for a list, so the `in` operator means has p
 # [Statements & declarations 语法](statements_and_declarations语法.md)
 * ## switch
 
+# [Functions函数](./functions函数.md)
+
 # [webapi](https://developer.mozilla.org/en-US/docs/Web/API)
 * [WindowOrWorkerGlobalScope](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope)
     * [ ] caches
