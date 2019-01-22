@@ -11,6 +11,17 @@ O.b = 2
 ```
 
 ## [continue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue)
+结束当前iteration的运行,进行下一个iteration
+* 和for一起用
+```
+for (var i = 0; i<10; i++) {
+    if (i===3) {
+        continue;
+    }
+    console.info(i);  // 012456789
+}
+```
+
 * 和while一起用
 ```
 var i = 0
