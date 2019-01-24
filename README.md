@@ -37,11 +37,23 @@ you must use index instead of value for a list, so the `in` operator means has p
 
 
 # [Statements & declarations 语法](statements_and_declarations语法.md)
+* do...while
+这个和while相比, 能保证执行一次.
+```
+    do {
+    } whilte (condition);
+```
 * ## switch
 
 # [Functions函数](./functions函数.md)
 
-# [webapi](https://developer.mozilla.org/en-US/docs/Web/API)
+# webapi [官网](https://developer.mozilla.org/en-US/docs/Web/API)
+## Window
+* location *返回一个Location对象*
+    * 访问新的页面: location = "https://www.mozilla.org";
+    * 刷新页面 location.reload(true);
+
+## 其他
 * [WindowOrWorkerGlobalScope](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope)
     * [ ] caches
     * [ ] indexedDB
