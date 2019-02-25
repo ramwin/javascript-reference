@@ -48,6 +48,46 @@ you must use index instead of value for a list, so the `in` operator means has p
 # [Functions函数](./functions函数.md)
 
 # webapi [官网](https://developer.mozilla.org/en-US/docs/Web/API)
+## WebSocket API [官网](https://developer.mozilla.org/en-US/docs/Web/API/Websockets_API)
+注意，websocket没法被模拟断网来断开
+### WebSocket [官网](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
+* 例子
+```
+const socket = new WebSocket('ws://localhost:8000');
+socket.addEventListener('open', function (event) {
+    socket.send('Hello Server!');
+});
+// Listen for messages
+socket.addEventListener('message', function (event) {
+    console.log('Message from server ', event.data);
+});
+```
+#### 方法属性
+* onclose
+```
+socket.onclose = function(e) {
+    // e是一个CloseEvent, 客户端主动关闭的，就是1000
+}
+```
+* `close([code[, reason]])`
+```
+socket.close(code, reason)
+```
+
+### CloseEvent [官网](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent)
+当WebSockets被关闭的时候，这个对象会发送给websocket的onclose对象
+* 属性
+    * code: 关闭码
+        * 1000, 浏览器主动关闭
+        * 1006, 服务器关闭
+        * 1011, 服务器报错了，无法处理请求。于是乎关闭了链接
+        * 3000-3999, websocket框架的错误码, 客户端最好别用
+        * 4000-4999, 客户端的错误码
+
+
+### MessageEvent
+当消息来的时候，这个对象会被发送出来
+
 ## Window
 * location *返回一个Location对象*
     * 访问新的页面: location = "https://www.mozilla.org";
