@@ -69,7 +69,13 @@ socket.onclose = function(e) {
     // e是一个CloseEvent, 客户端主动关闭的，就是1000
 }
 ```
-* `close([code[, reason]])`
+* readyState
+返回websocket的状态, 由于open和close的速度太快了，一般只会出现1和3, 0只有在创建对象后立刻查看才是0
+0: created, not yet open
+1: open, ready
+2: closing
+3: closed
+* 方法`close([code[, reason]])`
 ```
 socket.close(code, reason)
 ```
@@ -101,7 +107,7 @@ socket.close(code, reason)
     * [ ] origin
     * [ ] atob
     * [ ] btoa
-    * [ ] clearInterval
+    * [ ] clearInterval: `scope.clearInterval(intervalID)`
     * [ ] clearTimeout
     * [ ] createImageBitmap()
     * [ ] fetch()
@@ -110,6 +116,7 @@ socket.close(code, reason)
         function happy() {
             console.log("");
         }
+        var intervalID = window.setInterval(happy, 500)
         ```
     * [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)  
         setTimeout return an timeoutId(integer), it share the same id with setInterval. The clearTimeout() and clearInterval() can technicaly be used interchangebaly.
