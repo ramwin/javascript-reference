@@ -43,7 +43,14 @@ you must use index instead of value for a list, so the `in` operator means has p
     do {
     } whilte (condition);
 ```
+* ## const
+* ## continue
+* ## for
+* ## for of
+* ## for in
+* ## function
 * ## switch
+* ## try...catch
 
 # [Functions函数](./functions函数.md)
 
@@ -94,6 +101,7 @@ socket.close(code, reason)
     * 刷新页面 location.reload(true);
 
 ## 其他
+# [webapi](https://developer.mozilla.org/en-US/docs/Web/API)
 * [WindowOrWorkerGlobalScope](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope)
     * [ ] caches
     * [ ] indexedDB
