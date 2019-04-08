@@ -1,7 +1,7 @@
 **Xiang Wang @ 2018-08-14 09:16:49**
 
+[Statements & declarations 语法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/Legacy_generator_function)
 
-# [Statements & declarations 语法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/Legacy_generator_function)
 ## [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 it cannot change through re-assignment, and it can't be redeclared. It does not mean the value it holds is immutable. User `Object.freeze()` to set the variable immutable.
 ```
@@ -76,7 +76,8 @@ function myfunction() {
 }
 ```
 
-## switch [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+## switch
+[官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
 * example
 ```
 switch (expression) {
