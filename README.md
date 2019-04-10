@@ -1,7 +1,6 @@
 **Xiang Wang @ 2015-11-23 18:56:23**
 
-# Menu
-* [mozilla official reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [mozilla official reference 火狐官方文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [Object basic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
 
 # [Guide](guide导览.md)
@@ -90,7 +89,6 @@ socket.close(code, reason)
         * 3000-3999, websocket框架的错误码, 客户端最好别用
         * 4000-4999, 客户端的错误码
 
-
 ### MessageEvent
 当消息来的时候，这个对象会被发送出来
 
@@ -98,6 +96,26 @@ socket.close(code, reason)
 * location *返回一个Location对象*
     * 访问新的页面: location = "https://www.mozilla.org";
     * 刷新页面 location.reload(true);
+
+## Element
+[测试](./test/elements.html)
+* getBoundingClientRect
+[官网](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+返回边的位置
+```
+var rect = dom.getBoundingClientRect()
+rect.top + rect.height == rect.bottom
+```
+
+* getClientRects  
+[官网](https://developer.mozilla.org/en-US/docs/Web/API/Element/getClientRects)
+```
+var rect = dom.getClientRects()[0]
+rect = {
+    "x": "距离屏幕左侧距离",
+    "y": "距离屏幕顶部距离",
+}
+```
 
 ## 其他
 * [WindowOrWorkerGlobalScope](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope)
