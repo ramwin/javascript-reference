@@ -47,6 +47,28 @@ you must use index instead of value for a list, so the `in` operator means has p
 # [Functions函数](./functions函数.md)
 
 # webapi [官网](https://developer.mozilla.org/en-US/docs/Web/API)
+
+## [Element](./webapi/element.md)
+[测试](./test/elements.html)
+* getBoundingClientRect
+[官网](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+返回边的位置
+```
+var rect = dom.getBoundingClientRect()
+rect.top + rect.height == rect.bottom
+```
+
+* getClientRects  
+[官网](https://developer.mozilla.org/en-US/docs/Web/API/Element/getClientRects)
+```
+var rect = dom.getClientRects()[0]
+rect = {
+    "x": "距离屏幕左侧距离",
+    "y": "距离屏幕顶部距离",
+}
+```
+
+
 ## WebSocket API [官网](https://developer.mozilla.org/en-US/docs/Web/API/Websockets_API)
 注意，websocket没法被模拟断网来断开
 ### WebSocket [官网](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
@@ -96,26 +118,6 @@ socket.close(code, reason)
 * location *返回一个Location对象*
     * 访问新的页面: location = "https://www.mozilla.org";
     * 刷新页面 location.reload(true);
-
-## Element
-[测试](./test/elements.html)
-* getBoundingClientRect
-[官网](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
-返回边的位置
-```
-var rect = dom.getBoundingClientRect()
-rect.top + rect.height == rect.bottom
-```
-
-* getClientRects  
-[官网](https://developer.mozilla.org/en-US/docs/Web/API/Element/getClientRects)
-```
-var rect = dom.getClientRects()[0]
-rect = {
-    "x": "距离屏幕左侧距离",
-    "y": "距离屏幕顶部距离",
-}
-```
 
 ## 其他
 * [WindowOrWorkerGlobalScope](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope)
