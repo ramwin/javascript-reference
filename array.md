@@ -40,6 +40,19 @@ var array3 = array1.concat(array2)
 var array4 = array1.concat(array2, array3)  可以一次性concat几个array
 ```
 
+### [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+创建一个新的array
+```
+var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+```
+* 语法
+> `var newArray = arr.filter(callback(element[, index[, array]])[, thisArg])`
+
 ### [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 ```
 var array1 = [5, 12, 8, 130, 44];

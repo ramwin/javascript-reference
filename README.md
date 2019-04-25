@@ -1,7 +1,6 @@
 **Xiang Wang @ 2015-11-23 18:56:23**
 
-# Menu
-* [mozilla official reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [mozilla official reference 火狐官方文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [Object basic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
 
 # [Guide](guide导览.md)
@@ -55,6 +54,28 @@ you must use index instead of value for a list, so the `in` operator means has p
 # [Functions函数](./functions函数.md)
 
 # webapi [官网](https://developer.mozilla.org/en-US/docs/Web/API)
+
+## [Element](./webapi/element.md)
+[测试](./test/elements.html)
+* getBoundingClientRect
+[官网](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+返回边的位置
+```
+var rect = dom.getBoundingClientRect()
+rect.top + rect.height == rect.bottom
+```
+
+* getClientRects  
+[官网](https://developer.mozilla.org/en-US/docs/Web/API/Element/getClientRects)
+```
+var rect = dom.getClientRects()[0]
+rect = {
+    "x": "距离屏幕左侧距离",
+    "y": "距离屏幕顶部距离",
+}
+```
+
+
 ## WebSocket API [官网](https://developer.mozilla.org/en-US/docs/Web/API/Websockets_API)
 注意，websocket没法被模拟断网来断开
 ### WebSocket [官网](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
@@ -76,7 +97,13 @@ socket.onclose = function(e) {
     // e是一个CloseEvent, 客户端主动关闭的，就是1000
 }
 ```
-* `close([code[, reason]])`
+* readyState
+返回websocket的状态, 由于open和close的速度太快了，一般只会出现1和3, 0只有在创建对象后立刻查看才是0
+0: created, not yet open
+1: open, ready
+2: closing
+3: closed
+* 方法`close([code[, reason]])`
 ```
 socket.close(code, reason)
 ```
@@ -90,7 +117,6 @@ socket.close(code, reason)
         * 1011, 服务器报错了，无法处理请求。于是乎关闭了链接
         * 3000-3999, websocket框架的错误码, 客户端最好别用
         * 4000-4999, 客户端的错误码
-
 
 ### MessageEvent
 当消息来的时候，这个对象会被发送出来
@@ -109,7 +135,7 @@ socket.close(code, reason)
     * [ ] origin
     * [ ] atob
     * [ ] btoa
-    * [ ] clearInterval
+    * [ ] clearInterval: `scope.clearInterval(intervalID)`
     * [ ] clearTimeout
     * [ ] createImageBitmap()
     * [ ] fetch()
@@ -118,6 +144,7 @@ socket.close(code, reason)
         function happy() {
             console.log("");
         }
+        var intervalID = window.setInterval(happy, 500)
         ```
     * [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)  
         setTimeout return an timeoutId(integer), it share the same id with setInterval. The clearTimeout() and clearInterval() can technicaly be used interchangebaly.
