@@ -54,20 +54,21 @@ checkiandj: while(i < 4) {
     }
     ```
 
-## for of:
-    ```
-    for ( let i of [4, 3, 2]) { console.log(i)}
-    ```
-## [for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in):  
-    `for in`的顺序是不一定的，不能依赖他的顺序，也不能用于`Array`
-    ```
-    var string1 = "";
-    var object1 = {a: 1, b:2, c:3};
-    for (var property1 in object1) {
-        string1 = string1 + object1[property1];
-    }
-    console.log(string1);  // "123"
-    ```
+## [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in):  
+`for in`的顺序是不一定的，不能依赖他的顺序，也不能用于`Array`
+```
+var string1 = "";
+var object1 = {a: 1, b:2, c:3};
+for (var property1 in object1) {
+    string1 = string1 + object1[property1];
+}
+console.log(string1);  // "123"
+```
+
+## [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+```
+for ( let i of [4, 3, 2]) { console.log(i)}
+```
 
 ## [function 函数](./functions函数.md)
 ```
@@ -75,6 +76,31 @@ function myfunction() {
   console.log(arguments)  // show the arguments
 }
 ```
+
+## [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+* 语法
+```
+if (condition1) {  // 如果要执行多个命令，就加个`{}`, 用得时候最好都加上`{}`
+    statement1
+}
+else if (condition2)
+    statement2
+else if (condition3)
+    Statement3
+else
+    statementN
+```
+* 如果在condition里面赋值
+```
+if (x=y) {  // 请避免这种写法，因为看代码时赋值语句会和==弄混
+    console.info("x不为空了")
+} else {
+    console.info("x仍然为空")
+}
+if ((x = y)) {  // 一定要用，最好用双括号
+}
+```
+
 
 ## switch
 [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
@@ -105,3 +131,7 @@ switch (expression) {
 ```
 
 * 如何处理多种case [stackoverflow](https://stackoverflow.com/questions/13207927/switch-statement-multiple-cases-in-javascript)
+
+## to be continued
+* [ ] for each ... in
+* [ ] import
