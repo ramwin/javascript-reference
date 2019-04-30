@@ -3,6 +3,25 @@
 * [mozilla official reference 火狐官方文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [Object basic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
 
+# 第三方包
+## Lodash
+### 基础
+*一致性、模块化、高性能的 JavaScript 实用工具库。*
+[测试](test/lodash.html)
+* 安装
+```
+<script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
+```
+### Function
+* debounce
+调用一个函数，这个函数必须要是多少秒之内没有被调用过的
+```
+_.debounce(func, [wait=0], [options={}])
+// 返回一个func, 之后调用这个新生成的func
+// 避免window的尺寸in flux的时候变化
+jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+```
+
 # [Guide](guide导览.md)
 # [Standard built-in objects 内置对象](./build_in_objects内置对象.md)
 * ## [Array数组](./array.md)
@@ -151,12 +170,3 @@ socket.close(code, reason)
            }
         });
     ```
-
-# 第三方包
-## Lodash
-*一致性、模块化、高性能的 JavaScript 实用工具库。*
-[测试](test/lodash.html)
-* 安装
-```
-<script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
-```

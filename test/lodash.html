@@ -4,8 +4,22 @@
     <title></title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
     <h1>测试lodash</h1>
+    <h2>测试debounce</h2>
+    <script>
+      testdebounce = _.debounce(
+        res => {
+          console.info("啊，我被点了", new Date());
+        },
+        1000,
+        {
+          "trailing": true,
+        }
+      )
+    </script>
+    <button class="btn btn-primary" onclick="testdebounce()">点我</button>
   </body>
 </html>
