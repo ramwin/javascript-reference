@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1>测试getBoundingClientRect</h1>
+    <div id="getBoundingClientRect">
+      <div class="border" v-bind:style="style"></div>
+      <div class="border border-primary d-inline-block dom">
+        我是用来测试的dom</div>
+      <button v-on:click="get()" class="btn">点击</button>
+      高度: <input v-model="height" type="number"></input>
+      <p>当前x: <span v-text="rect.x"></span>
+        当前y: <span v-text="rect.y"></span>
+        当前top: <span v-text="rect.top"></span>
+      </p>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#getBoundingClientRect",
+        data: {
+          height: 0,
+          "rect": {
+          },
+        },
+        computed: {
+          "style": function() {
+            return {
+              "height": this.height + "px",
+            }
+          }
+        },
+        watch: {
+          "height": function() {
+            this.get();
+          }
+        },
+        methods: {
+          "get": function() {
+            var dom = $('.dom', this.$el)[0]
+            var rect = dom.getBoundingClientRect()
+            console.info("getBoundingClientRect", rect);
+            this.rect = rect;
+            console.info("getClientRects", dom.getClientRects())
+          },
+        },
+      })
+    </script>
+    <h1>测试getClientRects</h1>
+    <div id="getClientRects">
+      <div class="border" v-bind:style="style"></div>
+      <div class="border border-primary d-inline-block dom">
+        我是用来测试的dom</div>
+      <button v-on:click="get()" class="btn">点击</button>
+      高度: <input v-model="height" type="number"></input>
+      <p>当前x: <span v-text="rect.x"></span>
+        当前y: <span v-text="rect.y"></span>
+        当前top: <span v-text="rect.top"></span>
+      </p>
+    </div>
+    <div class="footer" style="height: 1000px">
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#getClientRects",
+        data: {
+          height: 0,
+          "rect": {
+          },
+        },
+        computed: {
+          "style": function() {
+            return {
+              "height": this.height + "px",
+            }
+          }
+        },
+        watch: {
+          "height": function() {
+            this.get();
+          }
+        },
+        methods: {
+          "get": function() {
+            var dom = $('.dom', this.$el)[0]
+            var rect = dom.getClientRects()[0]
+            this.rect = rect;
+            console.info(rect.x);
+            console.info("getClientRects", dom.getClientRects())
+          },
+        },
+      })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>

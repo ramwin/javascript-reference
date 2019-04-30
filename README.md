@@ -143,11 +143,20 @@ socket.close(code, reason)
         * Syntax: `var timeoutId = scope.setTimeout(function, delay, param1, param2, ...)`
         * Example: `timeoutId = window.setTimeout(window.alert, 2000, 'That was relly slow!');`
 * scroll滚动
-    * 滚动到页面底部后更新
+    * 滚动到页面底部后更新  
     ```
-    $(window).scroll(function() {
-     if($(window).scrollTop() + $(window).height() +1 >= $(document).height()) {
-       user_list_vm.show_more();
-     }
-    });
+        $(window).scroll(function() {
+           if($(window).scrollTop() + $(window).height() +1 >= $(document).height()) {
+               user_list_vm.show_more();
+           }
+        });
     ```
+
+# 第三方包
+## Lodash
+*一致性、模块化、高性能的 JavaScript 实用工具库。*
+[测试](test/lodash.html)
+* 安装
+```
+<script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
+```
