@@ -1,41 +1,28 @@
 **Xiang Wang @ 2015-11-23 18:56:23**
 
-* [mozilla official reference 火狐官方文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [Object basic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
+[火狐官方文档][官网]  
+[对象基础](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)  
 
-# 第三方包
-## Lodash
-### 基础
-*一致性、模块化、高性能的 JavaScript 实用工具库。*
-[测试](test/lodash.html)
-* 安装
-```
-<script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
-```
-### Function
-* debounce
-调用一个函数，这个函数必须要是多少秒之内没有被调用过的
-```
-_.debounce(func, [wait=0], [options={}])
-// 返回一个func, 之后调用这个新生成的func
-// 避免window的尺寸in flux的时候变化
-jQuery(window).on('resize', _.debounce(calculateLayout, 150));
-```
 
 # [Guide](guide导览.md)
-# [Standard built-in objects 内置对象](./build_in_objects内置对象.md)
-* ## [Array数组](./array.md)
-* ## Date
-* ## Math [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+# [内置对象](./build_in_objects内置对象.md)
+Standard built-in objects 
+
+* [Array数组](./array.md)
+* Boolean
+* Date
+* Math [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
     * Math.floor [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
     返回一个数字的整数部分，如果是null的话，会返回0, 如果是 -5.05 会返回-6，所以返回的是小于等于这个数字的最大整数
     返回一个数字的divmod, [答案](https://stackoverflow.com/questions/4228356/integer-division-with-remainder-in-javascript), 不支持负数
-* ## Object
+* Object
 * ## RegExp
-* ## [String](./build_in_objects内置对象.md#String)
+* [String](./build_in_objects内置对象.md#String)
 
-# [Expressions and operators 操作符号，表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
-## [in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in)
+# [操作符号，表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
+Expressions and operators 
+
+* [in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in)
 you must use index instead of value for a list, so the `in` operator means has property or not, it doesn't means the object contains the item
   ```
   obj = {'key': 'value'}
@@ -46,15 +33,19 @@ you must use index instead of value for a list, so the `in` operator means has p
   'a' in list  // false
   ```
 
-* ## [Logical Operators 逻辑操作](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+* ## [逻辑操作](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+Logical Operators 
     * `&&` and
     * `||` or
     * `!` not
 
-* ## Operator precedence 执行顺序 [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+* 执行顺序 *Operator precedence*  
+[官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
 
 
-# [Statements & declarations 语法](statements_and_declarations语法.md)
+# [语法](statements_and_declarations语法.md)
+*Statements & declarations*
+
 * do...while
 这个和while相比, 能保证执行一次.
 ```
@@ -170,3 +161,25 @@ socket.close(code, reason)
            }
         });
     ```
+
+# 第三方包
+## Lodash
+### 基础
+*一致性、模块化、高性能的 JavaScript 实用工具库。*
+[测试](test/lodash.html)
+* 安装
+```
+<script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
+```
+### Function
+* debounce
+调用一个函数，这个函数必须要是多少秒之内没有被调用过的
+```
+_.debounce(func, [wait=0], [options={}])
+// 返回一个func, 之后调用这个新生成的func
+// 避免window的尺寸in flux的时候变化
+jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+```
+
+
+[官网]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
