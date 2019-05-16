@@ -89,6 +89,23 @@ rect = {
 }
 ```
 
+## [GlobalEventHandlers](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers)
+[测试](./test/globalevent.html)
+* [ ] oninput
+* [ ] oninvalid
+* onkeydown
+按键被按下去触发
+* onkeypress
+不要调用此接口，已经不再被采用。按键被按了触发。
+* onkeyup
+按键谈起触发
+```
+document.onkeyup = function(res) {
+    console.info(res["key"] == "PageDown")
+}
+```
+* [ ] onload
+* [ ] onloadeddata
 
 ## WebSocket API [官网](https://developer.mozilla.org/en-US/docs/Web/API/Websockets_API)
 注意，websocket没法被模拟断网来断开
