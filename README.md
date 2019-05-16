@@ -5,18 +5,29 @@
 
 
 # [Guide](guide导览.md)
+
 # [内置对象](./build_in_objects内置对象.md)
 Standard built-in objects 
 
 * [Array数组](./array.md)
 * Boolean
+*返回一个数的布尔值*
+0, -0, null, false, Nan, undefined, ""会变成false, 其他都是true(包括`{}`和`[]`)
 * Date
 * [Math][Math]
     * [Math.floor][Math.floor]  
-    返回一个数字的整数部分，如果是null的话，会返回0, 如果是 -5.05 会返回-6，所以返回的是小于等于这个数字的最大整数
-    返回一个数字的divmod, [答案](https://stackoverflow.com/questions/4228356/integer-division-with-remainder-in-javascript), 不支持负数
+    返回的是小于等于这个数字的最大整数
+    ```
+    Math.floor(null) = 0;
+    Math.floor(-5.05) = -6;
+    ```
+    返回一个数字的divmod, 不支持负数
+    ```
+    var quotient = Math.floor(y/x);
+    var remainder = y % x;
+    ```
 * Object
-* ## RegExp
+* ## [RegExp](./build_in_objects内置对象.md)
 * [String](./build_in_objects内置对象.md#String)
 
 # [操作符号，表达式][expression]
