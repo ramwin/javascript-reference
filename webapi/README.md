@@ -1,7 +1,6 @@
 **Xiang Wang @ 2019-05-16 14:34:54**
 
-
-[文档](https://developer.mozilla.org/en-US/docs/Web/API)
+[文档链接](https://developer.mozilla.org/en-US/docs/Web/API)
 
 ## [Element](./element.md)
 [测试](./test/elements.html)

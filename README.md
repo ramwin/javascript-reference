@@ -77,9 +77,19 @@ Logical Operators
 ## WebSocket API
 
 ## Window
-* location *返回一个Location对象*
-    * 访问新的页面: location = "https://www.mozilla.org";
-    * 刷新页面 location.reload(true);
+* properties
+    * location *返回一个Location对象*
+        * 访问新的页面: location = "https://www.mozilla.org";
+        * 刷新页面 location.reload(true);
+* Methods
+    * [confirm](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
+    ```
+    result = window.confirm(message);
+    if (result) {
+        ...
+    }
+    ```
+* Events
 
 ## 其他
 * [WindowOrWorkerGlobalScope](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope)
