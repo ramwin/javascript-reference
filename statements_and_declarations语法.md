@@ -129,8 +129,26 @@ switch (expression) {
         break
 }
 ```
-
 * 如何处理多种case [stackoverflow](https://stackoverflow.com/questions/13207927/switch-statement-multiple-cases-in-javascript)
+
+## [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+```
+try{
+  console.log("正在try")
+  console.log(1/0)  //这个js竟然不报错
+  throw("can't divided by zero");
+}
+catch(err){
+  console.log("catch到了错误");
+  console.log(err)
+  throw err
+}
+finally {
+  console.log("执行完毕");
+  // 此时如果没有return，这个error会继续抛出到上一层的try
+  // 如果有return, 这个error就不会被抛出了，外面就抓不到try了
+}
+```
 
 ## to be continued
 * [ ] for each ... in

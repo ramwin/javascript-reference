@@ -63,7 +63,14 @@ Logical Operators
     do {
     } whilte (condition);
 ```
+* ## const
+* ## continue
+* ## for
+* ## for of
+* ## for in
+* ## function
 * ## switch
+* ## try...catch
 
 # [Functions函数](./functions函数.md)
 
@@ -92,6 +99,7 @@ Logical Operators
 * Events
 
 ## 其他
+# [webapi](https://developer.mozilla.org/en-US/docs/Web/API)
 * [WindowOrWorkerGlobalScope](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope)
     * [ ] caches
     * [ ] indexedDB
