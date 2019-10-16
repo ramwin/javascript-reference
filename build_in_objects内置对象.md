@@ -1,6 +1,6 @@
 **Xiang Wang @ 2018-08-14 09:14:37**
 
-[Standard built-in objects 内置对象][1]
+[Standard built-in objects 内置对象][global-objects]
 ## [Array 数组](array.md), [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 ## [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * 示例代码
@@ -71,6 +71,26 @@ console.log(lines); // logs [ 'Some text', 'And some more', 'And yet', 'This is 
 `hello ${who}`
 escape `<a>${who}</a>`
 ```
+* [indexOf][string-indexOf]
+    * Syntax
+    ```
+    str.indexOf(searchValue)
+    str.indexOf(searchValue, fromIndex)  // fromIndex代表从哪个位置开始寻找，默认为0
+    ```
+    * 寻找一个字符串内出现了几次某个字母
+    ```
+    const str = 'To be, or not to be, that is the question.';
+    let count = 0;
+    let position = str.indexOf('e');
+
+    while (position !== -1) {
+      count++;
+      position = str.indexOf('e', position + 1);
+    }
+
+    console.log(count); // displays 4
+    ```
+
 * [Split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
 > str.split([separator[, limit]])
     * separator  
@@ -91,5 +111,6 @@ escape `<a>${who}</a>`
     console.log(splits);
     ```
 
-[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+[global-objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 [reg-guid]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+[string-indexOf]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
