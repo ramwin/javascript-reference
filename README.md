@@ -26,6 +26,15 @@ Standard built-in objects
     var quotient = Math.floor(y/x);
     var remainder = y % x;
     ```
+## [Number](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number)
+* [isInteger](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger) 返回一个数字是不是整数
+```
+Number.isInteger(0.1)  // false
+Number.isInteger("10")  // false
+Number.isInteger([1])  // false
+Number.isInteger(0)  // true
+```
+
 * Object
 * ## [RegExp](./build_in_objects内置对象.md)
 * [String](./build_in_objects内置对象.md#String)
@@ -50,8 +59,10 @@ Logical Operators
     * `||` or
     * `!` not
 
-* 执行顺序 *Operator precedence*  
-[官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+## [执行顺序 *Operator precedence*][执行顺序]
+* 20. (...)
+* 16. ! ...
+* 6. ... && ...
 
 
 # [语法](statements_and_declarations语法.md)
@@ -162,3 +173,5 @@ jQuery(window).on('resize', _.debounce(calculateLayout, 150));
 [expression]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
 [in]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in
 [逻辑操作]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators
+
+[执行顺序]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
