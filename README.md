@@ -53,16 +53,17 @@ you must use index instead of value for a list, so the `in` operator means has p
   'a' in list  // false
   ```
 
-* ## [逻辑操作][逻辑操作]  
+## [逻辑操作][逻辑操作]  
 Logical Operators 
-    * `&&` and
-    * `||` or
-    * `!` not
+* `&&` and
+* `||` or
+* `!` not
 
 ## [执行顺序 *Operator precedence*][执行顺序]
 * 20. (...)
 * 16. ! ...
 * 6. ... && ...
+* 5. ... || ...
 
 
 # [语法](statements_and_declarations语法.md)
