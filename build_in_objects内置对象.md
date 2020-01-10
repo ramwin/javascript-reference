@@ -34,6 +34,11 @@ delete myobj.a;
 var re = /ab+c/;  // js载入时就编译好了，速度快
 var re = new RegExp('ab+c');  // 速度慢，但是里面的内容可变
 ```
+* [使用特殊字符][Using-special-characters]
+    * [ ] `\v`
+    * `\w`: alphanumeric character(包括underscore) `[A-Za-z0-9_]`
+    * `\W`: 和`\w`相反，匹配所有非数字字母下划线的字符
+    * [ ] `\n`
 * 使用括号
 ```
 var re = /(\d+)(\w+)/
@@ -114,3 +119,5 @@ escape `<a>${who}</a>`
 [global-objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 [reg-guid]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 [string-indexOf]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+
+[Using-special-characters]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Using_special_characters
