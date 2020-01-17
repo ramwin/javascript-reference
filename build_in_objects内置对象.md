@@ -109,11 +109,16 @@ escape `<a>${who}</a>`
     var namelist = 'Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ';
     var re = /\s*;\s*/
     var namelist = names.split(re);
-
     // If separator is regular expression that contains capturing parentheses (), matched results are included in array
+    如果正则表达式里面有括号，那么分割的信息也会显示在array里面。注意这个括号要是group的那种，不能是把几个符号合并的那种
     var myString = 'Hello 1 word. Sentence number 2.';
-    var splits = myString.split(/(\d)/);
-    console.log(splits);
+    // 比较这三者的区别
+    myString.split(/\s*\d\s*/)
+    ["Hello", "word. Sentence number", "."]
+    myString.split(/(\s*\d\s*)/)
+    ["Hello", " 1 ", "word. Sentence number", " 2", "."]
+    myString.split(/\s*(\d)\s*/)
+    ["Hello", "1", "word. Sentence number", "2", "."]
     ```
 
 [global-objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
