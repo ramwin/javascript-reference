@@ -26,6 +26,15 @@ Standard built-in objects
     var quotient = Math.floor(y/x);
     var remainder = y % x;
     ```
+## [Number](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number)
+* [isInteger](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger) 返回一个数字是不是整数
+```
+Number.isInteger(0.1)  // false
+Number.isInteger("10")  // false
+Number.isInteger([1])  // false
+Number.isInteger(0)  // true
+```
+
 * Object
 * ## [RegExp](./build_in_objects内置对象.md)
 * [String](./build_in_objects内置对象.md#String)
@@ -44,14 +53,18 @@ you must use index instead of value for a list, so the `in` operator means has p
   'a' in list  // false
   ```
 
-* ## [逻辑操作][逻辑操作]  
+## [逻辑操作][逻辑操作]  
 Logical Operators 
-    * `&&` and
-    * `||` or
-    * `!` not
+* `&&` and
+* `||` or
+* `!` not
 
-* 执行顺序 *Operator precedence*  
-[官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+## [执行顺序 *Operator precedence*][执行顺序]
+* 20. (...)
+* 16. ! ...
+* 12. ... < ...
+* 6. ... && ...
+* 5. ... || ...
 
 
 # [语法](statements_and_declarations语法.md)
@@ -74,6 +87,9 @@ Logical Operators
 
 # [Functions函数](./functions函数.md)
 
+# [Misc]  
+待处理
+
 # [webapi](./webapi/README.md)
 
 ## [Element](./webapi/element.md)
@@ -84,9 +100,19 @@ Logical Operators
 ## WebSocket API
 
 ## Window
-* location *返回一个Location对象*
-    * 访问新的页面: location = "https://www.mozilla.org";
-    * 刷新页面 location.reload(true);
+* properties
+    * location *返回一个Location对象*
+        * 访问新的页面: location = "https://www.mozilla.org";
+        * 刷新页面 location.reload(true);
+* Methods
+    * [confirm](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
+    ```
+    result = window.confirm(message);
+    if (result) {
+        ...
+    }
+    ```
+* Events
 
 ## 其他
 # [webapi](https://developer.mozilla.org/en-US/docs/Web/API)
@@ -154,3 +180,5 @@ npm config set registry https://registry.npm.taobao.org
 [expression]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
 [in]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in
 [逻辑操作]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators
+
+[执行顺序]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence

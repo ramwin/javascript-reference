@@ -1,6 +1,6 @@
 **Xiang Wang @ 2018-08-14 09:14:37**
 
-[Standard built-in objects 内置对象][1]
+[Standard built-in objects 内置对象][global-objects]
 ## [Array 数组](array.md), [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 ## [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * 示例代码
@@ -34,6 +34,11 @@ delete myobj.a;
 var re = /ab+c/;  // js载入时就编译好了，速度快
 var re = new RegExp('ab+c');  // 速度慢，但是里面的内容可变
 ```
+* [使用特殊字符][Using-special-characters]
+    * [ ] `\v`
+    * `\w`: alphanumeric character(包括underscore) `[A-Za-z0-9_]`
+    * `\W`: 和`\w`相反，匹配所有非数字字母下划线的字符
+    * [ ] `\n`
 * 使用括号
 ```
 var re = /(\d+)(\w+)/
@@ -71,6 +76,26 @@ console.log(lines); // logs [ 'Some text', 'And some more', 'And yet', 'This is 
 `hello ${who}`
 escape `<a>${who}</a>`
 ```
+* [indexOf][string-indexOf]
+    * Syntax
+    ```
+    str.indexOf(searchValue)
+    str.indexOf(searchValue, fromIndex)  // fromIndex代表从哪个位置开始寻找，默认为0
+    ```
+    * 寻找一个字符串内出现了几次某个字母
+    ```
+    const str = 'To be, or not to be, that is the question.';
+    let count = 0;
+    let position = str.indexOf('e');
+
+    while (position !== -1) {
+      count++;
+      position = str.indexOf('e', position + 1);
+    }
+
+    console.log(count); // displays 4
+    ```
+
 * [Split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
 > str.split([separator[, limit]])
     * separator  
@@ -84,12 +109,20 @@ escape `<a>${who}</a>`
     var namelist = 'Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ';
     var re = /\s*;\s*/
     var namelist = names.split(re);
-
     // If separator is regular expression that contains capturing parentheses (), matched results are included in array
+    如果正则表达式里面有括号，那么分割的信息也会显示在array里面。注意这个括号要是group的那种，不能是把几个符号合并的那种
     var myString = 'Hello 1 word. Sentence number 2.';
-    var splits = myString.split(/(\d)/);
-    console.log(splits);
+    // 比较这三者的区别
+    myString.split(/\s*\d\s*/)
+    ["Hello", "word. Sentence number", "."]
+    myString.split(/(\s*\d\s*)/)
+    ["Hello", " 1 ", "word. Sentence number", " 2", "."]
+    myString.split(/\s*(\d)\s*/)
+    ["Hello", "1", "word. Sentence number", "2", "."]
     ```
 
-[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+[global-objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 [reg-guid]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+[string-indexOf]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+
+[Using-special-characters]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Using_special_characters
