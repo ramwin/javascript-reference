@@ -141,6 +141,11 @@ _.debounce(func, [wait=0], [options={}])
 jQuery(window).on('resize', _.debounce(calculateLayout, 150));
 ```
 
+# npm
+```
+npm config set registry https://registry.npm.taobao.org
+```
+
 
 [官网]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [对象基础文档]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
