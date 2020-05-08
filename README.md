@@ -171,6 +171,12 @@ jQuery(window).on('resize', _.debounce(calculateLayout, 150));
 ```
 npm config set registry https://registry.npm.taobao.org
 ```
+## [命令](https://docs.npmjs.com/cli-documentation/)
+* [install](https://docs.npmjs.com/cli-commands/install.html)
+```
+npm install --save  // 以前的npm需要用save来自动修改package.json. 现在不需要这个参数了
+```
+
 
 
 [官网]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
