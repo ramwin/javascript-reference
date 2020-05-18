@@ -63,6 +63,7 @@ Logical Operators
 * 20. (...)
 * 16. ! ...
 * 12. ... < ...
+* 11. != !== == ===
 * 6. ... && ...
 * 5. ... || ...
 
@@ -165,6 +166,34 @@ _.debounce(func, [wait=0], [options={}])
 // 返回一个func, 之后调用这个新生成的func
 // 避免window的尺寸in flux的时候变化
 jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+```
+### Math
+* sumBy 根据某个字段求和
+```
+_.sumBy(array, function(item) { return item.value}
+```
+
+# node
+## [modules](https://nodejs.org/dist/latest-v14.x/docs/api/modules.html)
+```
+// animal.js
+class Cat {
+    constructor(name) {
+        this.name = name
+    }
+    function say() {
+        console.info(`miao: ${this.name}`)
+    }
+}
+module.exports = {
+    Cat
+}
+exports.Cat = Cat
+exports.Cat = class Cat {...}
+// run.js
+const animal = require('./animal.js')
+var cat =animal.Cat('kitty')
+cat.say()
 ```
 
 # npm
