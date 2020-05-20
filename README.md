@@ -150,13 +150,23 @@ Logical Operators
     ```
 
 # 第三方包
-## Lodash
+## [Lodash](https://lodash.com/docs/)
 ### 基础
 *一致性、模块化、高性能的 JavaScript 实用工具库。*
 [测试](test/lodash.html)
 * 安装
 ```
 <script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
+var _ = require("lodash");
+_.filter
+```
+### Array
+### Collection
+* evenry
+```
+_.evenry([tru, 1, null, 'yes'], Boolean)
+_.every([User1, User2], {'active': true})
+_.every([User1, User2], ['active', true])
 ```
 ### Function
 * debounce
@@ -194,6 +204,13 @@ exports.Cat = class Cat {...}
 const animal = require('./animal.js')
 var cat =animal.Cat('kitty')
 cat.say()
+```
+## vue的模块或者组件
+```
+Cat.vue
+export default {
+}
+import Cat from "./Cat"
 ```
 
 # npm
