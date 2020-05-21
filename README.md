@@ -80,7 +80,7 @@ Logical Operators
 * ## const
 * ## continue
 * ## for
-* ## for of
+* ## [for of](./statements_and_declarations语法.md#for...of)
 * ## for in
 * ## function
 * ## switch
@@ -162,11 +162,15 @@ _.filter
 ```
 ### Array
 ### Collection
-* evenry
+* every
 ```
-_.evenry([tru, 1, null, 'yes'], Boolean)
+_.every([tru, 1, null, 'yes'], Boolean)
 _.every([User1, User2], {'active': true})
 _.every([User1, User2], ['active', true])
+```
+* find
+```
+_.find(array|object, {id: 1})
 ```
 ### Function
 * debounce

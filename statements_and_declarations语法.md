@@ -48,13 +48,13 @@ checkiandj: while(i < 4) {
 
 
 ## for:
-    ```
-    for (var i=1; i<10; i++){
-        console.log(i)
-    }
-    ```
+```
+for (var i=1; i<10; i++){
+    console.log(i)
+}
+```
 
-## [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in):  
+## [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) 循环对象:  
 `for in`的顺序是不一定的，不能依赖他的顺序，也不能用于`Array`
 ```
 var string1 = "";
@@ -65,9 +65,14 @@ for (var property1 in object1) {
 console.log(string1);  // "123"
 ```
 
-## [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+## [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) 循环列表
 ```
-for ( let i of [4, 3, 2]) { console.log(i)}
+python: for i in 
+javascript: for (let i of list) {}
+a = [{key: 'bar'}, {key1: 'foo'}]
+for (let i of a) {console.info(i)}
+// {key: "bar"}
+// {key1: "foo"}
 ```
 
 ## [function 函数](./functions函数.md)
