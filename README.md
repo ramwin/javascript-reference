@@ -220,6 +220,7 @@ import Cat from "./Cat"
 # npm
 ```
 npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmjs.org/
 ```
 ## [命令](https://docs.npmjs.com/cli-documentation/)
 * [install](https://docs.npmjs.com/cli-commands/install.html)
