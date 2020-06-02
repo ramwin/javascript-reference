@@ -187,6 +187,34 @@ jQuery(window).on('resize', _.debounce(calculateLayout, 150));
 _.sumBy(array, function(item) { return item.value}
 ```
 
+## Moment
+```
+const moment = require("moment")
+var m = moment(new Date())
+m.format("YYYY-MM-DD")  // 生成的是m的时区的日期. 通过m.utcOffset(0)可以修改时区. 默认为当前时区
+```
+Parse, validate, manipulate, and display dates and times in JavaScript.
+### Document
+* example
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+<script>
+  var now = moment(new Date())
+  console.log(now.format("YYYY-MM-DD"))
+  console.log(now.add(12, 'days').calendar());
+  moment("20111031", "YYYYMMDD")
+</script>
+```
+* [docs](https://momentjs.com/docs/)
+* [manipulating](https://momentjs.com/docs/#/manipulating/)  
+    It should be noted that moments are mutable. Calling any of the manipulation methods will **change** the original moment.
+    * add: `moment().add(7, 'days|d|weeks|w|months|M|years|y')`
+### durations
+```
+moment(moment.now() - moment.duration(2, 'hours'))
+moment.substract(2, 'hours')  // 但是这样原来的时间就丢失了
+```
+
 # node
 ## [modules](https://nodejs.org/dist/latest-v14.x/docs/api/modules.html)
 ```
