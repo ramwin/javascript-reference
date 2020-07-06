@@ -150,6 +150,25 @@ Logical Operators
     ```
 
 # 第三方包
+## [Axios](https://github.com/axios/axios)
+
+```
+const axios = require('axios');
+axios.get(
+  '/user', {
+    params: {
+      staff: true
+    }
+  })
+  .then(function(response) {
+  })
+axios.post('/user', data)
+    .then(function(response) {
+    })
+    .catch(function(error) {
+    })
+```
+
 ## [Lodash](https://lodash.com/docs/)
 ### 基础
 *一致性、模块化、高性能的 JavaScript 实用工具库。*
