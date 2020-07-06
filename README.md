@@ -187,7 +187,7 @@ jQuery(window).on('resize', _.debounce(calculateLayout, 150));
 _.sumBy(array, function(item) { return item.value}
 ```
 
-## Moment
+## [Moment](https://momentjs.com/)
 ```
 const moment = require("moment")
 var m = moment(new Date())
