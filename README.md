@@ -14,18 +14,22 @@ Standard built-in objects
 *返回一个数的布尔值*
 0, -0, null, false, Nan, undefined, ""会变成false, 其他都是true(包括`{}`和`[]`)
 * Date
-* [Math][Math]
-    * [Math.floor][Math.floor]  
-    返回的是小于等于这个数字的最大整数
-    ```
-    Math.floor(null) = 0;
-    Math.floor(-5.05) = -6;
-    ```
-    返回一个数字的divmod, 不支持负数
-    ```
-    var quotient = Math.floor(y/x);
-    var remainder = y % x;
-    ```
+
+## [Math][Math]
+* [Math.floor][Math.floor]  
+返回的是小于等于这个数字的最大整数
+```
+Math.floor(null) = 0;
+Math.floor(-5.05) = -6;
+```
+返回一个数字的divmod, 不支持负数
+```
+var quotient = Math.floor(y/x);
+var remainder = y % x;
+```
+* [Math.round](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round)  
+只能返回一个整数,和python不同
+
 ## [Number](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number)
 * [isInteger](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger) 返回一个数字是不是整数
 ```
