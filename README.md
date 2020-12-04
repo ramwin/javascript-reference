@@ -283,7 +283,7 @@ export default {
 import Cat from "./Cat"
 ```
 
-# npm
+# [npm](https://docs.npmjs.com/)
 ```
 npm config set registry https://registry.npm.taobao.org
 npm config set registry https://registry.npmjs.org/
@@ -294,6 +294,21 @@ npm config set registry https://registry.npmjs.org/
 npm install --save  // 以前的npm需要用save来自动修改package.json. 现在不需要这个参数了
 ```
 
+
+* [install](https://docs.npmjs.com/cli/v6/commands/npm-install)
+```
+npm install -P|--save-prod  # 添加到dependencies
+npm install -D|--save-dev  # 添加到devDependencies
+```
+
+* [shrinkwrap](https://docs.npmjs.com/cli/v6/commands/npm-shrinkwrap)
+锁定版本
+
+## npm-link-save
+## [npm-link-better](https://github.com/laggingreflex/npm-link-better)
+```
+npm-link-better vue
+```
 
 
 [官网]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
