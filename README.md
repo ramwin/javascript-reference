@@ -217,7 +217,7 @@ var m = moment(new Date())
 m.format("YYYY-MM-DD")  // 生成的是m的时区的日期. 通过m.utcOffset(0)可以修改时区. 默认为当前时区
 ```
 Parse, validate, manipulate, and display dates and times in JavaScript.
-### Document
+### [Document](https://momentjs.com/docs/)
 * example
 ```
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
@@ -228,11 +228,26 @@ Parse, validate, manipulate, and display dates and times in JavaScript.
   moment("20111031", "YYYYMMDD")
 </script>
 ```
-* [docs](https://momentjs.com/docs/)
+#### Get and Set time
+```
+let now = moment()
+noe.hours(12).minutes(0).seconds(0)
+```
 * [manipulating](https://momentjs.com/docs/#/manipulating/)  
     It should be noted that moments are mutable. Calling any of the manipulation methods will **change** the original moment.
     * add: `moment().add(7, 'days|d|weeks|w|months|M|years|y')`
-### durations
+#### 计算时间
+```
+moment().add(7, 'days')
+moment().subtract(7, 'days')
+```
+#### 展示时间
+```
+moment().format()  //  "2014-09-08T08:02:17-05:00"
+moment().format("YYYY-MM-DD HH:mm:ss") 
+```
+
+#### durations
 ```
 moment(moment.now() - moment.duration(2, 'hours'))
 moment.substract(2, 'hours')  // 但是这样原来的时间就丢失了
