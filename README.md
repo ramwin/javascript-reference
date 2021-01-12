@@ -253,6 +253,14 @@ moment(moment.now() - moment.duration(2, 'hours'))
 moment.substract(2, 'hours')  // 但是这样原来的时间就丢失了
 ```
 
+## [qs](https://www.npmjs.com/package/qs)
+解析和格式化请求参数  
+```
+const qs = require('qs')
+qs.parse('a=c') == { a: 'c'}
+qs.stringify({a: [1,2,3]}, {indices: false}) == 'a=1&a=2&a=3'
+```
+
 # node
 ## [modules](https://nodejs.org/dist/latest-v14.x/docs/api/modules.html)
 ```
