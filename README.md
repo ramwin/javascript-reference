@@ -197,6 +197,33 @@ _.every([User1, User2], ['active', true])
 ```
 _.find(array|object, {id: 1})
 ```
+* flatten
+```
+> results = [
+    1, 
+    [2, [3, [4]], 5],
+]
+> lodash.flatten(results)
+[1, [2,[3,[4]]], 5]
+```
+* flatMap
+把一个列表里的每个元素的children都拿出来
+```
+> results = [
+    {children: [1,2,3]},
+    {children: [4,5,6]},
+]
+> lodash.flatMap(results, (item) => {return item.children})
+[1, 2, 3, 4, 5, 6]
+```
+* map
+```
+> results = [{id: 1}, {id: 2}]
+> lodash.flatMap(results, (item) => {return item.id})
+[1, 2]
+```
+
+
 ### Function
 * debounce
 调用一个函数，这个函数必须要是多少秒之内没有被调用过的
