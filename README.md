@@ -92,7 +92,9 @@ Logical Operators
 
 # [Functions函数](./functions函数.md)
 
-# [Misc]  
+# [Misc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) 
+* [template literals 字符串模板](./build_in_objects内置对象.md#String字符串)
+
 待处理
 
 # [webapi](./webapi/README.md)

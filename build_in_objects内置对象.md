@@ -71,7 +71,7 @@ console.log(lines); // logs [ 'Some text', 'And some more', 'And yet', 'This is 
 ```
 
 ## [String 字符串](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-* Template literals 模板
+### [Template literals 模板](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 ```
 `hello ${who}`
 escape `<a>${who}</a>`
