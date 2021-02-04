@@ -216,6 +216,18 @@ _.find(array|object, {id: 1})
 > lodash.flatMap(results, (item) => {return item.children})
 [1, 2, 3, 4, 5, 6]
 ```
+* keyBy
+把collections根据条件生成key, 输出最后的dict
+```
+var array = [
+  { 'dir': 'left', 'code': 97 },
+  { 'dir': 'right', 'code': 100 }
+];
+_.keyBy(array, function(o) {
+  return String.fromCharCode(o.code);
+});
+// => { 'a': { 'dir': 'left', 'code': 97 }, 'd': { 'dir': 'right', 'code': 100 } }
+```
 * map
 ```
 > results = [{id: 1}, {id: 2}]
@@ -237,6 +249,15 @@ jQuery(window).on('resize', _.debounce(calculateLayout, 150));
 * sumBy 根据某个字段求和
 ```
 _.sumBy(array, function(item) { return item.value}
+```
+
+### Object
+* mapValues
+把每个数据的values处理一下
+```
+dict = { '1': [ 1, 1 ], '2': [ 2, 2 ] }
+lodash.mapValues(dict, res=>{return res[1]})
+// { '1': 1, '2': 2 }
 ```
 
 ## [Moment](https://momentjs.com/)
