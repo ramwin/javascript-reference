@@ -70,6 +70,15 @@ var lines = text.split(/\r\n|\r|\n/);
 console.log(lines); // logs [ 'Some text', 'And some more', 'And yet', 'This is the end' ]
 ```
 
+## [Set][Set]
+```
+const mySet = new Set()
+mySet.add(1)
+mySet.add(5)
+mySet.add(5)
+for (let item of set) console.info(set)
+```
+
 ## [String 字符串](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 ### [Template literals 模板](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 ```
@@ -124,5 +133,5 @@ escape `<a>${who}</a>`
 [global-objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 [reg-guid]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 [string-indexOf]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
-
 [Using-special-characters]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Using_special_characters
+[Set]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
