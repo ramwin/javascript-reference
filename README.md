@@ -175,6 +175,23 @@ axios.post('/user', data)
     })
 ```
 
+## [eslint](https://eslint.org/)
+格式化代码，我自己的规则
+```
+rules: {
+  "indent": [
+    "error", 2,  // 2缩进
+    {
+      "SwitchCase": 1  // switch内部也要缩进
+    }
+  ],
+  "comma-dangle": ["error", "always-multiline"],  // 多行时最后要加逗号
+  "no-debugger": "off",
+  "no-unused-vars": "off",  // 开发时关闭，开发结束后打开
+}
+```
+
+
 ## [Lodash](https://lodash.com/docs/)
 ### 基础
 *一致性、模块化、高性能的 JavaScript 实用工具库。*
@@ -231,7 +248,9 @@ _.keyBy(array, function(o) {
 * map
 ```
 > results = [{id: 1}, {id: 2}]
-> lodash.flatMap(results, (item) => {return item.id})
+> lodash.map(results, "id")
+[1, 2]
+> lodash.map(results, (item) => {return item.id})
 [1, 2]
 ```
 
@@ -301,6 +320,19 @@ moment().format("YYYY-MM-DD HH:mm:ss")
 ```
 moment(moment.now() - moment.duration(2, 'hours'))
 moment.substract(2, 'hours')  // 但是这样原来的时间就丢失了
+```
+
+## Papaparse
+解析csv文件
+```
+import Papa from "papaparse"
+Papa.parse(file|csvString|url, config: {}, complete: function(results) {})
+```
+* config
+```
+{
+  header: true,
+}
 ```
 
 ## [qs](https://www.npmjs.com/package/qs)
