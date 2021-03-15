@@ -26,6 +26,10 @@ myobj.a = 5;
 myobj.b = 12;
 delete myobj.a;
 ```  
+* 获取keys
+```
+Object.keys(obj)
+```
 
 ## [RegExp正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 [regexp guid][reg-guid]
