@@ -305,6 +305,10 @@ npm install --save  // 以前的npm需要用save来自动修改package.json. 现
 npm install -P|--save-prod  # 添加到dependencies
 npm install -D|--save-dev  # 添加到devDependencies
 ```
+* publish
+```
+npm publich  # 发布版本
+```
 
 * [shrinkwrap](https://docs.npmjs.com/cli/v6/commands/npm-shrinkwrap)
 锁定版本
