@@ -92,7 +92,9 @@ Logical Operators
 
 # [Functions函数](./functions函数.md)
 
-# [Misc]  
+# [Misc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) 
+* [template literals 字符串模板](./build_in_objects内置对象.md#String字符串)
+
 待处理
 
 # [webapi](./webapi/README.md)
@@ -175,6 +177,25 @@ axios.post('/user', data)
 
 ## [lodash](./lodash.md)
 
+## [eslint](https://eslint.org/)
+格式化代码，我自己的规则
+```
+rules: {
+  "indent": [
+    "error", 2,  // 2缩进
+    {
+      "SwitchCase": 1  // switch内部也要缩进
+    }
+  ],
+  "comma-dangle": ["error", "always-multiline"],  // 多行时最后要加逗号
+  "no-debugger": "off",
+  "no-unused-vars": "off",  // 开发时关闭，开发结束后打开
+}
+```
+
+## [Lodash](./lodash.md)
+一致性、模块化、高性能的 JavaScript 实用工具库。
+
 ## [Moment](https://momentjs.com/)
 ```
 const moment = require("moment")
@@ -182,7 +203,7 @@ var m = moment(new Date())
 m.format("YYYY-MM-DD")  // 生成的是m的时区的日期. 通过m.utcOffset(0)可以修改时区. 默认为当前时区
 ```
 Parse, validate, manipulate, and display dates and times in JavaScript.
-### Document
+### [Document](https://momentjs.com/docs/)
 * example
 ```
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
@@ -193,14 +214,50 @@ Parse, validate, manipulate, and display dates and times in JavaScript.
   moment("20111031", "YYYYMMDD")
 </script>
 ```
-* [docs](https://momentjs.com/docs/)
+#### Get and Set time
+```
+let now = moment()
+noe.hours(12).minutes(0).seconds(0)
+```
 * [manipulating](https://momentjs.com/docs/#/manipulating/)  
     It should be noted that moments are mutable. Calling any of the manipulation methods will **change** the original moment.
     * add: `moment().add(7, 'days|d|weeks|w|months|M|years|y')`
-### durations
+#### 计算时间
+```
+moment().add(7, 'days')
+moment().subtract(7, 'days')
+```
+#### 展示时间
+```
+moment().format()  //  "2014-09-08T08:02:17-05:00"
+moment().format("YYYY-MM-DD HH:mm:ss") 
+```
+
+#### durations
 ```
 moment(moment.now() - moment.duration(2, 'hours'))
 moment.substract(2, 'hours')  // 但是这样原来的时间就丢失了
+```
+
+## Papaparse
+解析csv文件
+```
+import Papa from "papaparse"
+Papa.parse(file|csvString|url, config: {}, complete: function(results) {})
+```
+* config
+```
+{
+  header: true,
+}
+```
+
+## [qs](https://www.npmjs.com/package/qs)
+解析和格式化请求参数  
+```
+const qs = require('qs')
+qs.parse('a=c') == { a: 'c'}
+qs.stringify({a: [1,2,3]}, {indices: false}) == 'a=1&a=2&a=3'
 ```
 
 # node
@@ -250,6 +307,10 @@ npm install ramwin@latest // 升级
 ```
 npm install -P|--save-prod  # 添加到dependencies
 npm install -D|--save-dev  # 添加到devDependencies
+```
+* publish
+```
+npm publich  # 发布版本
 ```
 
 * [shrinkwrap](https://docs.npmjs.com/cli/v6/commands/npm-shrinkwrap)

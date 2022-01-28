@@ -7,3 +7,5 @@ exports.function = function(msg) {
     console.log("你输入了: " + msg)
   }
 }
+
+exports.n = 2
