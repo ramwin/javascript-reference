@@ -190,6 +190,7 @@ rules: {
   "comma-dangle": ["error", "always-multiline"],  // 多行时最后要加逗号
   "no-debugger": "off",
   "no-unused-vars": "off",  // 开发时关闭，开发结束后打开
+  "semi": "never",
 }
 ```
 
@@ -307,6 +308,7 @@ npm install ramwin@latest // 升级
 ```
 npm install -P|--save-prod  # 添加到dependencies
 npm install -D|--save-dev  # 添加到devDependencies
+npm install webpack@^5
 ```
 * publish
 ```
