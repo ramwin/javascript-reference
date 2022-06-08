@@ -157,7 +157,7 @@ Logical Operators
 
 # 第三方包
 ## [Axios](https://github.com/axios/axios)
-
+[异步await](./library/axios_await.js)
 ```
 const axios = require('axios');
 axios.get(
