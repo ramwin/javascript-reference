@@ -2,15 +2,17 @@
 
 [Statements & declarations 语法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/Legacy_generator_function)
 
-## [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
-it cannot change through re-assignment, and it can't be redeclared. It does not mean the value it holds is immutable. User `Object.freeze()` to set the variable immutable.
+## [const][const]
+it cannot change through re-assignment, and it can't be redeclared.  
+It does not mean the value it holds is immutable.
+Use `Object.freeze()` to set the variable immutable.
 ```
 const name1=value1 [, name2=value2]
 const O = new Object()  // usually we will use all-uppercase letters
 O.b = 2
 ```
 
-## [continue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue)
+## [continue][continue]
 结束当前iteration的运行,进行下一个iteration
 * 和for一起用
 ```
@@ -107,8 +109,7 @@ if ((x = y)) {  // 一定要用，最好用双括号
 ```
 
 
-## switch
-[官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+## [switch][switch]
 * example
 ```
 switch (expression) {
@@ -117,7 +118,7 @@ switch (expression) {
         break  // break is necessary, otherwise the statements will continue execute
     case value2:
         // statements
-        break
+        return  // 直接return的话就推出函数了.不用break
     case 3:  // multi case judgement
     case 4:
     case 5:
@@ -158,3 +159,7 @@ finally {
 ## to be continued
 * [ ] for each ... in
 * [ ] import
+
+[const]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+[continue]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue
+[switch]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
