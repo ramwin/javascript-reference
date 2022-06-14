@@ -30,4 +30,9 @@ async function await_data() {
 }
 
 
-await_data()
+function test() {
+  // await await_data();  // 这个会报错
+  console.info("end")
+};
+
+test();
