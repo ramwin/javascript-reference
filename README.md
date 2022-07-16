@@ -175,8 +175,6 @@ axios.post('/user', data)
     })
 ```
 
-## [lodash](./lodash.md)
-
 ## [eslint](https://eslint.org/)
 格式化代码，我自己的规则
 ```

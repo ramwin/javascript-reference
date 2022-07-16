@@ -1,14 +1,21 @@
-## Lodash
 [官网](https://lodash.com/docs/)
+
 ### 基础
 *一致性、模块化、高性能的 JavaScript 实用工具库。*
 [测试](test/lodash.html)
+
 * 安装
 ```
 <script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
 var _ = require("lodash");
 _.filter
 ```
+* 引入
+```
+import lodash from {lodash};
+lodash.filter
+```
+
 ### Array
 * difference
 找到a里面才存在的元素
@@ -25,6 +32,19 @@ _.every([tru, 1, null, 'yes'], Boolean)
 _.every([User1, User2], {'active': true})
 _.every([User1, User2], ['active', true])
 ```
+
+#### [filter](https://lodash.com/docs/4.17.15#filter)
+```javascript
+list = [1, 2, 3, 4, 5]
+lodash.filter(list, (res) => {return res%2===0})
+// [2, 4]
+lodash.filter(list, {key: 3})  // 找到key为3的
+lodash.filter(list, 'key')  // 找到存在key并且key的值为true的
+```
+
+> 1. 返回的对象是引用。操作会导致原始数据改变
+> 2. 
+
 * find
 ```
 _.find(array|object, {id: 1})
