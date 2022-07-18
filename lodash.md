@@ -120,6 +120,9 @@ _.sumBy(array, function(item) { return item.value}
 ```
 
 ### Object
+* mapKeys
+把每个数据的key都处理一下
+
 * mapValues
 把每个数据的values处理一下
 ```
