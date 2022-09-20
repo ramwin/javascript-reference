@@ -89,7 +89,15 @@ a.slice(1, 2) [2]  // end是可选项
 ### Array.some(function)
 返回Array里面是否存在能通过function的元素
 
-* [ ] sort
+### Array.sort
+排序。
+
+### Array.splice(start[, deleteCount[, item1[, item2, itemN]]])
+从start开始，删除deleteCount个数据。 并塞入剩余的参数
+```
+array.splice(2, 0, 'drum')  // 相当于 python 的 array.insert(2, 'drum')
+array.splice(2, 1, 'drum')  // 相当与 array[2] = 'drum'
+```
 
 ### unshift [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
 把一个或者多个元素添加到数组头部，然后返回数据长度
