@@ -9,7 +9,8 @@
 # [内置对象](./build_in_objects内置对象.md)
 Standard built-in objects 
 
-* [Array数组](./array.md)
+## [Array数组](./array.md)
+
 * Boolean
 *返回一个数的布尔值*
 0, -0, null, false, Nan, undefined, ""会变成false, 其他都是true(包括`{}`和`[]`)

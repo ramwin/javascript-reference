@@ -1,7 +1,4 @@
-**Xiang Wang @ 2018-07-24 15:36:15**
-
-
-Array 数组 [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+## Array 数组 [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 ### Basic Example
 
@@ -77,6 +74,22 @@ var a = [1, 2, 3];
 const b = a.map(x => x*x);
 console.log(b) [1, 4, 9]
 ```
+
+* [ ] shift
+
+### [slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+返回shallow copy浅拷贝
+```
+a = [1, 2, 3]
+a.slice(-1)  [3]  // 支持负数
+a.slice(1, 2) [2]  // end是可选项
+```
+
+
+### Array.some(function)
+返回Array里面是否存在能通过function的元素
+
+* [ ] sort
 
 ### unshift [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
 把一个或者多个元素添加到数组头部，然后返回数据长度
