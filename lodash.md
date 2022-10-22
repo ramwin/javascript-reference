@@ -76,9 +76,10 @@ _.groupBy([6.1, 4.2, 6.3], Math.floor);
 _.groupBy(['one', 'two', 'three'], 'length');
 ```
 
-* keyBy
+#### keyBy
+一般用于把返回的列表变成dict来方便索引, 去重.
 把collections根据条件生成key, 输出最后的dict
-```
+```javascript
 var array = [
   { 'dir': 'left', 'code': 97 },
   { 'dir': 'right', 'code': 100 }
@@ -88,13 +89,41 @@ _.keyBy(array, function(o) {
 });
 // => { 'a': { 'dir': 'left', 'code': 97 }, 'd': { 'dir': 'right', 'code': 100 } }
 ```
-* map
+
+#### flatMap
+一般用于把每个元素的children汇总到一起
+```javascript
+lodash.flatMap([1, 2], (item)=>[item, item*3])
+[1, 3, 2, 6]
+lodash.flatMap(results, item=>{
+    return lodash.map(
+        item.children,
+        childitem=>{
+            childitem.pareent_id=item.id
+            return childitem
+        }
+    )
+})
+```
+
+#### map
 ```
 > results = [{id: 1}, {id: 2}]
 > lodash.map(results, "id")
 [1, 2]
 > lodash.map(results, (item) => {return item.id})
 [1, 2]
+```
+
+#### reduce
+一般用于汇总. 如果只有一个元素, 就会返回第一个元素
+```javascript
+lodash.reduce([1, 2, 3], function(result, next) {
+    return result + result * next
+})
+s1 = 1
+s2 = 1 + 1 * 2 = 3
+s3 = 3 + 3 * 3 = 12
 ```
 
 
@@ -120,6 +149,15 @@ _.sumBy(array, function(item) { return item.value}
 ```
 
 ### Object
+
+#### get
+获取属性, 同时不会报错, 默认返回undefined
+```javascript
+var object = { 'a': [{ 'b': { 'c': 3 } }] };
+lodash.get(object, 'a[0].b.c');
+lodash.get(object, ["a", "0", "b", "c"], 56)  // 默认返回56
+```
+
 * mapKeys
 把每个数据的key都处理一下
 
