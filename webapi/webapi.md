@@ -84,3 +84,15 @@ socket.close(code, reason)
 
 ### MessageEvent
 当消息来的时候，这个对象会被发送出来
+
+## [console](https://developer.mozilla.org/en-US/docs/Web/API/Console_API)
+* clear
+清空日志
+* group
+把后面的日志都缩进起来
+* groupCollapsed  
+把后面的日志都缩进并折叠起来
+* groupEnd
+结束缩进
+* table
+用表格展示某个数据

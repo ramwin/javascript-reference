@@ -98,7 +98,7 @@ Logical Operators
 
 待处理
 
-# [webapi](./webapi/README.md)
+# [webapi](./webapi/webapi.md)
 
 ## [Element](./webapi/element.md)
 
@@ -106,6 +106,8 @@ Logical Operators
 * ### onkeydown
 
 ## WebSocket API
+
+## [console](./webapi/webapi.md#console)
 
 ## Window
 * properties
@@ -123,7 +125,6 @@ Logical Operators
 * Events
 
 ## 其他
-# [webapi](https://developer.mozilla.org/en-US/docs/Web/API)
 * [WindowOrWorkerGlobalScope](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope)
     * [ ] caches
     * [ ] indexedDB
