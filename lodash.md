@@ -1,6 +1,5 @@
-[官网](https://lodash.com/docs/)
-
 ### 基础
+[官网](https://lodash.com/docs/)
 *一致性、模块化、高性能的 JavaScript 实用工具库。*
 [测试](test/lodash.html)
 
@@ -17,12 +16,20 @@ lodash.filter
 ```
 
 ### Array
-* difference
+
+#### difference
 找到a里面才存在的元素
 ```
 a = [1, 2, 3]
 b = [2, 3, 4]
 _.difference(a, b)  // [1]
+```
+
+#### differenceBy
+找到id不一样的
+```
+_.differenceBy([{"x": 2}, {"x": 1}], [{"x": 1}], "x");
+>> [{"x": 2}]
 ```
 
 ### Collection
@@ -45,12 +52,12 @@ lodash.filter(list, 'key')  // 找到存在key并且key的值为true的
 > 1. 返回的对象是引用。操作会导致原始数据改变
 > 2. 
 
-* find
+#### find
 ```
 _.find(array|object, {id: 1})
 ```
 
-* flatten
+#### flatten
 ```
 > results = [
     1, 
@@ -59,8 +66,11 @@ _.find(array|object, {id: 1})
 > lodash.flatten(results)
 [1, [2,[3,[4]]], 5]
 ```
-* flatMap
+
+#### flatMap
 把一个列表里的每个元素的children都拿出来
+
+* 拿到所有子元素
 ```
 > results = [
     {children: [1,2,3]},
@@ -69,7 +79,23 @@ _.find(array|object, {id: 1})
 > lodash.flatMap(results, (item) => {return item.children})
 [1, 2, 3, 4, 5, 6]
 ```
-* groupBy
+
+* 拿到所有子元素, 并对他们复制parent
+```javascript
+lodash.flatMap([1, 2], (item)=>[item, item*3])
+[1, 3, 2, 6]
+lodash.flatMap(results, item=>{
+    return lodash.map(
+        item.children,
+        childitem=>{
+            childitem.pareent_id=item.id
+            return childitem
+        }
+    )
+})
+```
+
+#### groupBy
 把数组根据一定的规律变成 { type0: sublist, type1: sublist}
 ```
 _.groupBy([6.1, 4.2, 6.3], Math.floor);
@@ -88,22 +114,6 @@ _.keyBy(array, function(o) {
   return String.fromCharCode(o.code);
 });
 // => { 'a': { 'dir': 'left', 'code': 97 }, 'd': { 'dir': 'right', 'code': 100 } }
-```
-
-#### flatMap
-一般用于把每个元素的children汇总到一起
-```javascript
-lodash.flatMap([1, 2], (item)=>[item, item*3])
-[1, 3, 2, 6]
-lodash.flatMap(results, item=>{
-    return lodash.map(
-        item.children,
-        childitem=>{
-            childitem.pareent_id=item.id
-            return childitem
-        }
-    )
-})
 ```
 
 #### map
@@ -158,6 +168,17 @@ lodash.get(object, 'a[0].b.c');
 lodash.get(object, ["a", "0", "b", "c"], 56)  // 默认返回56
 ```
 
+#### has
+判断属性是否存在
+```javascript
+a = {'key': 'bar', 'foo': 'see', 'deep': {'a': 'b'}}
+lodash.has(a, 'key')  // true
+lodash.has(a, 'deep.a')  // true
+```
+
+#### keys
+返回Object的属性, 注意会把int变成string
+
 * mapKeys
 把每个数据的key都处理一下
 
@@ -168,3 +189,6 @@ dict = { '1': [ 1, 1 ], '2': [ 2, 2 ] }
 lodash.mapValues(dict, res=>{return res[1]})
 // { '1': 1, '2': 2 }
 ```
+
+#### values
+返回所有的value
