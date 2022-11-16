@@ -32,6 +32,24 @@ _.differenceBy([{"x": 2}, {"x": 1}], [{"x": 1}], "x");
 >> [{"x": 2}]
 ```
 
+#### intersection
+把多个array重复的取出来
+
+#### intersectionBy
+把多个array根据(例如id)条件一致的取出来
+
+#### uniq
+```
+_.uniq([2, 1, 2])
+[2, 1]
+```
+
+#### uniqBy
+```
+_.uniqBy([{ 'x': 1 }, { 'x': 2 }, { 'x': 1 }], 'x');
+// => [{ 'x': 1 }, { 'x': 2 }]
+```
+
 ### Collection
 * every
 ```
@@ -55,6 +73,13 @@ lodash.filter(list, 'key')  // 找到存在key并且key的值为true的
 #### find
 ```
 _.find(array|object, {id: 1})
+返回id为1的对象
+```
+
+#### findIndex
+```
+_.find(array, {id: 1})
+返回id为1的对象所在的index
 ```
 
 #### flatten
@@ -100,6 +125,13 @@ lodash.flatMap(results, item=>{
 ```
 _.groupBy([6.1, 4.2, 6.3], Math.floor);
 _.groupBy(['one', 'two', 'three'], 'length');
+```
+
+#### includes
+判断一个元素是否在collections
+```
+_.includes({ 'a': 1, 'b': 2 }, 1);
+// => true
 ```
 
 #### keyBy
@@ -151,6 +183,10 @@ jQuery(window).on('resize', _.debounce(calculateLayout, 150));
 * clone
 * cloneDepp
 复制对象
+
+* isEqual
+默认情况下array的比较和object的比较都是false
+可以比较对象和array
 
 ### Math
 * sumBy 根据某个字段求和
