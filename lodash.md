@@ -32,6 +32,21 @@ _.differenceBy([{"x": 2}, {"x": 1}], [{"x": 1}], "x");
 >> [{"x": 2}]
 ```
 
+#### differenceWith
+找到函数返回为True的
+
+```javascript
+const lodash = require('lodash')
+
+a = [ { id: 1, }, { id: 2, } ]
+b = [ { pk: 1, }, { pk: 2, } ]
+
+lodash.differenceWith(a, b, (first, second)=>{
+  console.info("比较", first, second)
+  return first.id == second.pk
+})
+```
+
 #### intersection
 把多个array重复的取出来
 
