@@ -38,6 +38,21 @@ _.differenceBy([{"x": 2}, {"x": 1}], [{"x": 1}], "x");
 #### intersectionBy
 把多个array根据(例如id)条件一致的取出来
 
+* [ ] pullAt
+
+#### [remove](https://lodash.com/docs/4.17.15#remove)
+
+```
+_.remove(array, [predicate=.identity])
+var array = [1, 2, 3, 4];
+var evens = _.remove(array, function(n) {
+  return n % 2 == 0;
+});
+```
+
+* [ ] reverse
+
+
 #### uniq
 ```
 _.uniq([2, 1, 2])
