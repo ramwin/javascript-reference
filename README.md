@@ -153,6 +153,7 @@ Logical Operators
 待处理
 
 # [webapi](./webapi/webapi.md)
+atob, btoa
 
 ## [Element](./webapi/element.md)
 
@@ -189,8 +190,6 @@ Logical Operators
     * [ ] indexedDB
     * [ ] isSecureContext
     * [ ] origin
-    * [ ] atob
-    * [ ] btoa
     * [ ] clearInterval: `scope.clearInterval(intervalID)`
     * [ ] clearTimeout
     * [ ] createImageBitmap()

@@ -96,3 +96,15 @@ socket.close(code, reason)
 结束缩进
 * table
 用表格展示某个数据
+
+## 其他
+* atob, btoa
+字符串转化成base64. 但是不支持中文
+```
+const utf8 = require('utf8')
+let binary = utf8.encode("我")
+let base64 = btoa(binary)  // 5oiR
+
+let binary = atob(base64)
+let string = utf8.decode(binary)  // 我
+```
