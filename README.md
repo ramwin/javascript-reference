@@ -111,6 +111,11 @@ Logical Operators
 
 ## Window
 * properties
+    * [localStorage][localStorage]: 返回本地存储只能保存字符串。不存在返回null
+    ```
+    localStorage.setItem("myCat", "Tom");
+    localStorage.getItem("myCat")  // 
+    ```
     * location *返回一个Location对象*
         * 访问新的页面: location = "https://www.mozilla.org";
         * 刷新页面 location.reload(true);
@@ -334,3 +339,4 @@ npm-link-better vue
 [逻辑操作]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators
 
 [执行顺序]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+[localStorage]: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
