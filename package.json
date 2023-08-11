@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "axios": "^1.4.0",
+    "ramwin": "^1.0.2"
+  }
+}

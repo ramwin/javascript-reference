@@ -309,6 +309,7 @@ npm install ramwin@latest // 升级
 npm install -P|--save-prod  # 添加到dependencies
 npm install -D|--save-dev  # 添加到devDependencies
 npm install webpack@^5
+npm uninstall <package>
 ```
 
 * publish
