@@ -15,6 +15,7 @@ function test() {
   ).then(res=>{
     console.info("返回了数据")
     console.info(res.data)
+    return res.data
   })
 }
 async function await_promise() {

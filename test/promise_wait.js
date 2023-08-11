@@ -6,6 +6,7 @@ function test() {
   ).then(res=>{
     console.info("返回了数据")
     console.info(res.data)
+    return res.data.url
   })
 }
 
@@ -18,8 +19,9 @@ async function await_promise() {
 function main() {
   test().then(res=>{
     console.info("来了")
+    console.info(res)
   })
   console.info("请求没执行完毕, 我会先输出")
 }
 
-await_promise()
+main()
