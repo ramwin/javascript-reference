@@ -6,6 +6,30 @@
 
 # [Guide](guide导览.md)
 
+# [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+```
+// test/promise_wait.js
+function test() {
+  return axios.get(
+    "https://httpbin.org/get"
+  ).then(res=>{
+    console.info("返回了数据")
+    console.info(res.data)
+  })
+}
+async function await_promise() {
+  let prom = test()
+  await prom
+  console.info("请求执行完毕, 我才会输出, 但是需要用在async的函数里")
+}
+function main() {
+  test().then(res=>{
+    console.info("来了")
+  })
+  console.info("请求没执行完毕, 我会先输出")
+}
+```
+
 # [内置对象](./build_in_objects内置对象.md)
 Standard built-in objects 
 
