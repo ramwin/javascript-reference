@@ -302,19 +302,15 @@ npm config set registry https://registry.npm.taobao.org
 npm config set registry https://registry.npmjs.org/
 ```
 ## [命令](https://docs.npmjs.com/cli-documentation/)
-* [install](https://docs.npmjs.com/cli-commands/install.html)
+* [install](https://docs.npmjs.com/cli/v9/commands/npm-install)
 ```
 npm install --save  // 以前的npm需要用save来自动修改package.json. 现在不需要这个参数了
 npm install ramwin@latest // 升级
-```
-
-
-* [install](https://docs.npmjs.com/cli/v6/commands/npm-install)
-```
 npm install -P|--save-prod  # 添加到dependencies
 npm install -D|--save-dev  # 添加到devDependencies
 npm install webpack@^5
 ```
+
 * publish
 ```
 npm publich  # 发布版本
