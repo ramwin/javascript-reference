@@ -68,6 +68,13 @@ to be continued...
 like find, but return the index of an array  
 to be continued...
 
+### includes
+判断是否包含某个值
+```javascript
+[1, 2].includes(2)  // true
+[1, 2].includes('2')  // false
+```
+
 ### map
 ```
 var a = [1, 2, 3];
