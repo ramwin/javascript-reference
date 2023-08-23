@@ -4,16 +4,7 @@
 [对象基础][对象基础文档]  
 
 
-# typescript
-* [interface](https://typescript.bootcss.com/interfaces.html)
-```
-interface Person {
-    name: string;
-    age: number;
-}
-
-let person: Person = Person
-```
+# [typescript](./typescript/README.md)
 
 # [Guide](guide导览.md)
 

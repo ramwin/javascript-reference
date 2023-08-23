@@ -4,3 +4,9 @@ function log<T>(value: T): T {
 }
 
 log<string>('123');
+
+
+type Log = <T>(value: T) => T
+
+let myLog: Log = log
+myLog(123)
