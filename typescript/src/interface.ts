@@ -11,3 +11,13 @@ const data = {
 const student: Student2 = data
 
 console.log(student);
+
+function test_interface_null() {
+    // 一般用 interface|null 代表信息
+    let user: Student2|null = null;
+    user = {id: 3};
+    user = null;
+    console.log(user);
+}
+
+test_interface_null();
