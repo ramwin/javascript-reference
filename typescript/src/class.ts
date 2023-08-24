@@ -31,5 +31,15 @@ function test1() {
     man.hello();
 }
 
+function short() {
+    class Dog {
+        constructor(public id: number, name: string) {
+            this.id = id  // 因为设置了public, 可以免去属性定义
+            this.name = name
+        }
+        // id: Number
+        name: String
+    }
+}
 
 test1();

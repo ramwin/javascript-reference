@@ -17,6 +17,16 @@ lodash.filter
 
 ### Array
 
+#### [concat](https://lodash.com/docs/#concat)
+类似python里面的列表的+
+```
+var array = [1];
+var other = _.concat(array, 2, [3], [[4]]);
+
+console.log(other);
+// => [1, 2, 3, [4]]
+```
+
 #### difference
 找到a里面才存在的元素
 ```
