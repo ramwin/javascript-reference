@@ -134,6 +134,9 @@ escape `<a>${who}</a>`
     ["Hello", "1", "word. Sentence number", "2", "."]
     ```
 
+## [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+产生唯一的符号. 不过用在字典里会导致失效, 用变量名替换
+
 [global-objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 [reg-guid]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 [string-indexOf]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
