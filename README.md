@@ -226,6 +226,13 @@ rules: {
 }
 ```
 
+## [get-fqdn](https://github.com/forwardemail/get-fqdn)
+```
+const getFQDN = require('get-fqdn');
+const fqdn = await getFQDN()
+console.log(fqdn)  // windows.ramwin.com
+```
+
 ## [Lodash](./lodash.md)
 一致性、模块化、高性能的 JavaScript 实用工具库。
 
