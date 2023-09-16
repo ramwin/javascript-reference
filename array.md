@@ -84,6 +84,9 @@ console.log(b) [1, 4, 9]
 
 * [ ] shift
 
+### shift
+移除并返回第一个元素, 如果不存在就返回undefined
+
 ### [slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 返回shallow copy浅拷贝
 ```
