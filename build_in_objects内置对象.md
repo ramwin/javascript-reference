@@ -18,6 +18,14 @@ console.log(time3.toISOString()) "%y-%m-%dT%H:%M:%S.000Z"这种格式
 * Methods
     * Date.now()  // 1520395758500
 
+## [NumberFormat][NumberFormat]
+```
+new Intl.NumberFormat(
+    'en-US',
+    {notation: 'compact', maximumSignificantDigits: 4}
+).format(123_000_0)  // 1.23M
+```
+
 ## [Object API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * 删除一个key
 ```
@@ -142,3 +150,4 @@ escape `<a>${who}</a>`
 [string-indexOf]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
 [Using-special-characters]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Using_special_characters
 [Set]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+[NumberFormat]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
