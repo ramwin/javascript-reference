@@ -78,6 +78,21 @@ var evens = _.remove(array, function(n) {
 * [ ] reverse
 
 
+* [ ] union
+
+#### [unionBy](https://lodash.com/docs/4.17.15#unionBy)
+把多个列表组合成一个
+```
+_.unionBy([2.1], [1.2, 2.3], Math.floor);
+// => [2.1, 1.2]
+```
+
+#### unionWith
+用一个函数来判断是否一致
+```
+_.unionWith(objects, others, _.isEqual);
+```
+
 #### uniq
 ```
 _.uniq([2, 1, 2])
