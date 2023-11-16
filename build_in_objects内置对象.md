@@ -18,6 +18,8 @@ console.log(time3.toISOString()) "%y-%m-%dT%H:%M:%S.000Z"这种格式
 * Methods
     * Date.now()  // 1520395758500
 
+## [Number](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number)
+
 ## [NumberFormat][NumberFormat]
 ```
 new Intl.NumberFormat(

@@ -58,7 +58,7 @@ var remainder = y % x;
 * [Math.round](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round)  
 只能返回一个整数,和python不同
 
-## [Number](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number)
+## [Number](./build_in_objects内置对象.md#number)
 * [isInteger](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger) 返回一个数字是不是整数
 ```
 Number.isInteger(0.1)  // false
