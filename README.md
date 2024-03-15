@@ -85,6 +85,24 @@ you must use index instead of value for a list, so the `in` operator means has p
   'a' in list  // false
   ```
 
+### `...` [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)  [展开语法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+用在列表上
+```javascript
+function sum(x, y, z) {
+    return x + y + z
+}
+numbers = [1,2,3]
+sum(...numbers)
+[0, ...numbers, 4]
+```
+用在字典上, 后面的会替换掉前面的
+```
+const obj1 = { foo: "bar", x: 42 };
+const obj2 = { foo: "baz", y: 13 };
+
+const mergedObj = { x: 41, ...obj1, ...obj2, y: 9 }; // { x: 42, foo: "baz", y: 9 }
+```
+
 ## [逻辑操作][逻辑操作]  
 Logical Operators 
 * `&&` and
