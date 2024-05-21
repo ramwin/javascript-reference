@@ -67,6 +67,15 @@ Number.isInteger([1])  // false
 Number.isInteger(0)  // true
 ```
 
+* 转化成大写数字  
+[官网](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat#%E4%BD%BF%E7%94%A8_locales)
+```
+
+// 通过编号系统中的 nu 扩展键请求，例如：中文十进制数字
+console.log(new Intl.NumberFormat("zh-Hans-CN-u-nu-hanidec").format(number));
+// → 一二三,四五六.七八九
+```
+
 * Object
 * ## [RegExp](./build_in_objects内置对象.md)
 * [String](./build_in_objects内置对象.md#String)
