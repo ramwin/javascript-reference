@@ -7,7 +7,7 @@ Welcome to javascript reference's documentation!
 ================================================
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 5
    :caption: Contents:
 
    ./README.md
