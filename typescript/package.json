@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.4.0",
+    "pathlib": "^0.1.2",
     "tsx": "^4.19.2",
     "typescript": "^5.1.6"
   },
