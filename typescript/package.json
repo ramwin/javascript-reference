@@ -9,10 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/json-bigint": "^1.0.4",
     "axios": "^1.4.0",
+    "bn.js": "^5.2.1",
+    "json-bigint": "^1.0.0",
+    "json-with-bigint": "^2.2.3",
     "pathlib": "^0.1.2",
     "tsx": "^4.19.2",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "web3": "^4.14.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.14.0",

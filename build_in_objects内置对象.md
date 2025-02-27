@@ -1,6 +1,11 @@
 **Xiang Wang @ 2018-08-14 09:14:37**
 
 [Standard built-in objects 内置对象][global-objects]
+## [NumberFormat][NumberFormat]
+```
+new Intl.NumberFormat("zh-cn", config).format(10020)
+```
+
 ## [Array 数组](array.md), [官网](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 ## [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * 示例代码
@@ -152,4 +157,4 @@ escape `<a>${who}</a>`
 [string-indexOf]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
 [Using-special-characters]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Using_special_characters
 [Set]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
-[NumberFormat]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
+[NumberFormat]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#minimumsignificantdigits

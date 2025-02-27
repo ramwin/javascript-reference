@@ -15,13 +15,13 @@ author = 'Xiang Wang'
 
 extensions = [
         "myst_parser",
-        "sphinx_design",
         "sphinx.ext.todo",
         "sphinx.ext.autodoc",
+        "sphinx_design",
         ]
 
 templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'ramwin']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'ramwin', "**/node_modules"]
 
 language = 'zh_CN'
 
