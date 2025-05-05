@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.43.0",
     "@types/json-bigint": "^1.0.4",
     "axios": "^1.4.0",
     "bn.js": "^5.2.1",
