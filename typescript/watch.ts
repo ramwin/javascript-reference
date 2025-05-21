@@ -8,7 +8,8 @@ const cluster = createCluster({
 })
 
 class WatchCommand {
-  construct() {
+  readonly KEY: string = "list"
+  constructor() {
     console.log("construct")
   }
   async initRedis() {
@@ -16,8 +17,9 @@ class WatchCommand {
   }
   async run() {
     await this.initRedis()
+    console.log("我监听的是:", this.KEY)
     for (let i=0; i<=10; i++) {
-      console.log(await cluster.get(i.toString()))
+      console.log(await cluster.blPop(this.KEY, 0))
     }
     await this.close()
   }
